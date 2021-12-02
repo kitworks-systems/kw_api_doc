@@ -1,5 +1,5 @@
-Welcome to Kitworks API documentation!
-======================================
+Специфікація взаємодії сервісу Odoo (API)
+=========================================
 
 **kwapidoc** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
@@ -11,12 +11,12 @@ how to :ref:`installation` the project.
 
 .. note::
 
-   This project is under active development.
+   Цей документ ще знаходиться в розробці
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   currencies
+
