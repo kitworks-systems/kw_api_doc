@@ -4,9 +4,9 @@ Authentication
 Получение токена
 ------------------
 
-.. http:get:: /kw_api/auth/token
+.. http:post:: /kw_api/auth/token
 
-    Возвращает информацию об активном токене
+    Авторизует пользователя по логину и паролю и возвращает активный токен
 
     **Example request**:
 
@@ -15,24 +15,18 @@ Authentication
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
-              -H "Authorization: Token <token>" http://localhost/kw_api/auth/token \
-              -H "Content-Type: application/json" \
-              -d @body.json
+                -X POST \
+                -H "Content-Type: application/json" \
+                -d @body.json \
+                http://localhost/kw_api/auth/token/refresh
 
         .. code-tab:: python
 
             import requests
             import json
             URL = 'http://localhost/kw_api/auth/token'
-            TOKEN = '<token>'
-            HEADERS = {'Authorization': f'token {TOKEN}'}
             data = json.load(open('body.json', 'rb'))
-            response = requests.patch(
-                URL,
-                json=data,
-                headers=HEADERS,
-            )
+            response = requests.post(URL, json=data)
             print(response.json())
 
     The content of body.json is like:
@@ -78,78 +72,110 @@ Authentication
 Обновление токена
 --------------------------
 
-.. code-block:: console
+.. http:post:: /kw_api/auth/token/refresh
 
-    POST /kw_api/auth/token/refresh
+    Обновляет токен на основании специального рефрештокена
 
-метод запроса methods=['POST']
+    **Example request**:
 
-тип запроса type='json' (Нужно передать заголовок
-Content-Type: application/json)
+    .. tabs::
 
-Обязательный параметр refreshToken, значение которого получается в ответе
-/kw_api/auth/token в refresh_token
+        .. code-tab:: bash
 
-Стурктура корретного ответа (совпадает с /kw_api/auth/token)
+            $ curl \
+                -X POST \
+                -H "Content-Type: application/json" \
+                -d @body.json \
+                http://localhost/kw_api/auth/token/refresh
 
-.. code-block:: json
+        .. code-tab:: python
 
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": [
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/auth/token'
+            data = json.load(open('body.json', 'rb'))
+            response = requests.post(URL, json=data)
+            print(response.json())
+
+    The content of body.json is like:
+
+    .. code-block:: json
+
         {
-          "name": "access_token_1c807c04e173b64026",
-          "user_id": 2,
-          "expire_date": "2021-11-20 08:52:30",
-          "is_expired": false,
-          "refresh_token": "access_token_c670d49ccf",
-          "refresh_expire_date": "2022-09-06 08:52:30",
-          "is_refresh_token_expired": false
+          "refresh_token": "refresh_token"
         }
-      ]
-    }
+
+    **Example response**:
+
+    .. code-block:: json
+
+        {
+          "jsonrpc": "2.0",
+          "id": null,
+          "result": [
+            {
+              "name": "access_token_604d657a64ef24d",
+              "user_id": 2,
+              "expire_date": "2021-11-20 08:45:03",
+              "is_expired": false,
+              "refresh_token": "access_token_08938c77",
+              "refresh_expire_date": "2022-09-06 08:45:03",
+              "is_refresh_token_expired": false
+            }
+          ]
+        }
+
+    :>json string name: Token value
+    :>json integer user_id: ID of user who was authorised
+    :>json string expire_date: Date of token expiration
+    :>json boolean is_expired: Is token expired
+    :>json string refresh_token: Refresh token value
+    :>json string refresh_expire_date: Date of refresh token expiration
+    :>json boolean is_refresh_token_expired: Is refresh token expired
+    :query string refresh_token: User refresh_token
 
 
 Удаление токена
 ---------------
 
-.. code-block:: console
 
-    DELETE /kw_api/auth/token
+.. http:delete:: /kw_api/auth/token
 
-Удаляет токен и обновляемый токен, получить новый будет возможно только
-через POST /kw_api/auth/token
+    Удаляет токен и обновляемый токен, получить новый будет возможно только
+    через POST /kw_api/auth/token
 
-метод запроса methods=['DELETE']
+    **Example request**:
 
-Обязательный параметр в заголовке Authorization, в котором нужно передать
-токен, полученный через контроллер /kw_api/auth/token
+    .. tabs::
 
-.. code-block:: json
+        .. code-tab:: bash
 
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": {
-        "code": {
-          "message": "Token has been successfully deleted"
-        },
-        "message": ""
-      }
-    }
+            $ curl \
+                -H "Authorization: Token <token>" \
+                http://localhost/kw_api/auth/token
 
+        .. code-tab:: python
 
-Стурктура ответа с ошибкой, значение параметра message может быть переведено
-на язык пользователя
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/auth/token'
+            TOKEN = '<token>'
+            HEADERS = {'Authorization': f'token {TOKEN}'}
+            response = requests.delete(URL, headers=HEADERS)
+            print(response.json())
 
-.. code-block:: json
+    **Example response**:
 
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": {
-        "code": "auth_error",
-        "message": "No token were given or given wrong one"
-      }
-    }
+    .. code-block:: json
+
+        {
+          "jsonrpc": "2.0",
+          "id": null,
+          "result": {
+            "code": {
+              "message": "Token has been successfully deleted"
+            },
+            "message": ""
+          }
+        }
+
