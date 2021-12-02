@@ -16,7 +16,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinxcontrib.httpdomain',
-    'djangodocs',
+    # 'djangodocs',
     'doc_extensions',
     'sphinx_tabs.tabs',
     'sphinx-prompt',
