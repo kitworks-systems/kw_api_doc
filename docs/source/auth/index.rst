@@ -6,60 +6,74 @@ Authentication
 
 .. http:get:: /kw_api/auth/token
 
-Возвращает информацию об активном токене
+    Возвращает информацию об активном токене
 
-**Example request**:
+    **Example request**:
 
+    .. tabs::
 
+        .. code-tab:: bash
 
-The content of body.json is like:
+            $ curl \
+              -X PATCH \
+              -H "Authorization: Token <token>" https://test.test/kw_api/auth/token \
+              -H "Content-Type: application/json" \
+              -d @body.json
 
-.. code-block:: json
+        .. code-tab:: python
 
-    {
-      "login": "login",
-      "password": "password"
-    }
+            import requests
+            import json
+            URL = 'https://test.test/kw_api/auth/token'
+            TOKEN = '<token>'
+            HEADERS = {'Authorization': f'token {TOKEN}'}
+            data = json.load(open('body.json', 'rb'))
+            response = requests.patch(
+                URL,
+                json=data,
+                headers=HEADERS,
+            )
+            print(response.json())
 
+    The content of body.json is like:
 
-200 - Successful Response
+    .. code-block:: json
 
-.. code-block:: json
-
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": [
         {
-          "name": "access_token_604d657a64ef24d",
-          "user_id": 2,
-          "expire_date": "2021-11-20 08:45:03",
-          "is_expired": false,
-          "refresh_token": "access_token_08938c77",
-          "refresh_expire_date": "2022-09-06 08:45:03",
-          "is_refresh_token_expired": false
+          "login": "login",
+          "password": "password"
         }
-      ]
-    }
+
+    **Example response**:
+
+    .. code-block:: json
+
+        {
+          "jsonrpc": "2.0",
+          "id": null,
+          "result": [
+            {
+              "name": "access_token_604d657a64ef24d",
+              "user_id": 2,
+              "expire_date": "2021-11-20 08:45:03",
+              "is_expired": false,
+              "refresh_token": "access_token_08938c77",
+              "refresh_expire_date": "2022-09-06 08:45:03",
+              "is_refresh_token_expired": false
+            }
+          ]
+        }
 
 
-:>json string name: Token value
-
-:>json integer user_id: ID of user who was authorised
-
-:>json string expire_date: Date of token expiration
-
-:>json boolean is_expired: Is token expired
-
-:>json string refresh_token: Refresh token value
-
-:>json string refresh_expire_date: Date of refresh token expiration
-
-:>json boolean is_refresh_token_expired: Is refresh token expired
-
-:query string login: User login
-
-:query string password: User password
+    :json string name: Token value
+    :json integer user_id: ID of user who was authorised
+    :json string expire_date: Date of token expiration
+    :json boolean is_expired: Is token expired
+    :json string refresh_token: Refresh token value
+    :json string refresh_expire_date: Date of refresh token expiration
+    :json boolean is_refresh_token_expired: Is refresh token expired
+    :query string login: User login
+    :query string password: User password
 
 
 Обновление токена
