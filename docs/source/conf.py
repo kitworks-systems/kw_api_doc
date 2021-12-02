@@ -10,13 +10,6 @@ sys.path.append(os.path.dirname(__file__))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "readthedocs.settings.dev")
 
 
-def get_version():
-    """Return package version from setup.cfg."""
-    config = RawConfigParser()
-    config.read(os.path.join('..', 'setup.cfg'))
-    return config.get('metadata', 'version')
-
-
 sys.path.append(os.path.abspath('_ext'))
 extensions = [
     'sphinx.ext.autosectionlabel',
@@ -40,7 +33,7 @@ project = 'Kitworks API'
 copyright = '2010-{}, Read the Docs, Inc & contributors'.format(
     datetime.datetime.now().year
 )
-version = get_version()
+version = '1.0.1'
 release = version
 exclude_patterns = ['_build']
 default_role = 'obj'
