@@ -4,22 +4,48 @@ Authentication
 Получение токена
 ------------------
 
-.. code-block:: console
-
-    GET /kw_api/auth/token
+.. http:get:: /kw_api/auth/token
 
 Возвращает информацию об активном токене
 
-метод запроса methods=['POST']
+**Example request**:
 
-тип запроса type='json' (Нужно передать заголовок
-Content-Type: application/json)
+.. tabs::
 
-Обязательные параметры
-login
-password
+    .. code-tab:: bash
 
-Стурктура корретного ответа
+        $ curl \
+          -X PATCH \
+          -H "Authorization: Token <token>" https://test.test/kw_api/auth/token \
+          -H "Content-Type: application/json" \
+          -d @body.json
+
+    .. code-tab:: python
+
+        import requests
+        import json
+        URL = 'https://test.test/kw_api/auth/token'
+        TOKEN = '<token>'
+        HEADERS = {'Authorization': f'token {TOKEN}'}
+        data = json.load(open('body.json', 'rb'))
+        response = requests.patch(
+            URL,
+            json=data,
+            headers=HEADERS,
+        )
+        print(response.json())
+
+The content of body.json is like:
+
+.. code-block:: json
+
+    {
+      "login": "login",
+      "password": "password"
+    }
+
+
+200 - Successful Response
 
 .. code-block:: json
 
@@ -29,7 +55,7 @@ password
       "result": [
         {
           "name": "access_token_604d657a64ef24d",
-          "user_id": "res.users(2,)",
+          "user_id": 2,
           "expire_date": "2021-11-20 08:45:03",
           "is_expired": false,
           "refresh_token": "access_token_08938c77",
@@ -39,19 +65,24 @@ password
       ]
     }
 
-Стурктура ответа с ошибкой, значение параметра message может быть переведено
-на язык пользователя
 
-.. code-block:: json
+:>json string name: Token value
 
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": {
-        "code": "auth_error",
-        "message": "Wrong phone / password"
-      }
-    }
+:>json integer user_id: ID of user who was authorised
+
+:>json string expire_date: Date of token expiration
+
+:>json boolean is_expired: Is token expired
+
+:>json string refresh_token: Refresh token value
+
+:>json string refresh_expire_date: Date of refresh token expiration
+
+:>json boolean is_refresh_token_expired: Is refresh token expired
+
+:query string login: User login
+
+:query string password: User password
 
 
 Обновление токена
@@ -59,7 +90,7 @@ password
 
 .. code-block:: console
 
-    [POST] /kw_api/auth/token/refresh
+    POST /kw_api/auth/token/refresh
 
 метод запроса methods=['POST']
 
@@ -89,26 +120,13 @@ Content-Type: application/json)
       ]
     }
 
-Стурктура ответа с ошибкой, значение параметра message может быть переведено
-на язык пользователя
-
-.. code-block:: json
-
-    {
-      "jsonrpc": "2.0",
-      "id": null,
-      "result": {
-        "code": "auth_error",
-        "message": "Wrong token"
-      }
-    }
 
 Удаление токена
 ---------------
 
 .. code-block:: console
 
-    [DELETE] /kw_api/auth/token
+    DELETE /kw_api/auth/token
 
 Удаляет токен и обновляемый токен, получить новый будет возможно только
 через POST /kw_api/auth/token
