@@ -1,5 +1,6 @@
 import os
 import sys
+import datetime
 from configparser import RawConfigParser
 
 import sphinx_rtd_theme
@@ -7,11 +8,6 @@ import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.dirname(__file__))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "readthedocs.settings.dev")
-
-from django.utils import timezone
-
-import django
-django.setup()
 
 
 def get_version():
@@ -42,7 +38,7 @@ templates_path = ['_templates']
 master_doc = 'index'
 project = 'Kitworks API'
 copyright = '2010-{}, Read the Docs, Inc & contributors'.format(
-    timezone.now().year
+    datetime.datetime.now().year
 )
 version = get_version()
 release = version
