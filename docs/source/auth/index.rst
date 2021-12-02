@@ -16,7 +16,7 @@ Authentication
 
             $ curl \
               -X PATCH \
-              -H "Authorization: Token <token>" https://test.test/kw_api/auth/token \
+              -H "Authorization: Token <token>" http://localhost/kw_api/auth/token \
               -H "Content-Type: application/json" \
               -d @body.json
 
@@ -24,7 +24,7 @@ Authentication
 
             import requests
             import json
-            URL = 'https://test.test/kw_api/auth/token'
+            URL = 'http://localhost/kw_api/auth/token'
             TOKEN = '<token>'
             HEADERS = {'Authorization': f'token {TOKEN}'}
             data = json.load(open('body.json', 'rb'))
