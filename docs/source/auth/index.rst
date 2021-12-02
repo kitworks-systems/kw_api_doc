@@ -10,30 +10,7 @@ Authentication
 
 **Example request**:
 
-.. tabs::
 
-    .. code-tab:: bash
-
-        $ curl \
-          -X PATCH \
-          -H "Authorization: Token <token>" https://test.test/kw_api/auth/token \
-          -H "Content-Type: application/json" \
-          -d @body.json
-
-    .. code-tab:: python
-
-        import requests
-        import json
-        URL = 'https://test.test/kw_api/auth/token'
-        TOKEN = '<token>'
-        HEADERS = {'Authorization': f'token {TOKEN}'}
-        data = json.load(open('body.json', 'rb'))
-        response = requests.patch(
-            URL,
-            json=data,
-            headers=HEADERS,
-        )
-        print(response.json())
 
 The content of body.json is like:
 
