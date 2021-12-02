@@ -1,10 +1,14 @@
-API for mobile app
-===================
+Authentication
+==============
 
-/kw_api/auth/token
+Получение токена
 ------------------
 
-Возвращает карточку клиента привязанную к залогинненому пользователю
+.. code-block:: console
+
+    GET /kw_api/auth/token
+
+Возвращает информацию об активном токене
 
 метод запроса methods=['POST']
 
@@ -50,10 +54,12 @@ password
     }
 
 
-/kw_api/auth/token/refresh
+Обновление токена
 --------------------------
 
-Обновляет токен
+.. code-block:: console
+
+    [POST] /kw_api/auth/token/refresh
 
 метод запроса methods=['POST']
 
@@ -97,8 +103,12 @@ Content-Type: application/json)
       }
     }
 
-/kw_api/auth/token
-------------------
+Удаление токена
+---------------
+
+.. code-block:: console
+
+    [DELETE] /kw_api/auth/token
 
 Удаляет токен и обновляемый токен, получить новый будет возможно только
 через POST /kw_api/auth/token

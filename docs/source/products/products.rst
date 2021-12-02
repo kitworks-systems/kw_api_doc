@@ -16,7 +16,7 @@ Responses
 
 200 - Successful Response
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "result": {
@@ -86,7 +86,7 @@ Responses
 
 200 - Successful Response
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "result": {

@@ -4,7 +4,9 @@
 Отримання списку всіх валют
 -----------------------------
 
-GET /kw_api/integration/currencies
+.. code-block:: console
+
+    GET /kw_api/integration/currencies
 
 У результаті запиту отримуємо списку всіх валют.
 
@@ -16,7 +18,7 @@ Responses
 
 200 - Successful Response
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "result": [
