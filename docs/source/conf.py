@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'kwapidoc'
+project = 'Kitworks API'
 copyright = '2021, Kitworks'
 author = 'Volodymyr Karabanov'
 

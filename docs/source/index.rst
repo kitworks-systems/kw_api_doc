@@ -1,9 +1,25 @@
-Specification
-=========================================
+Kitworks API Specification
+==========================
 
 .. note::
 
-    Цей документ ще знаходиться в розробці
+    This project is under active development.
 
-Contents
---------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Base usage
+
+   auth
+   currencies
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Product
+
+   products/products
