@@ -30,7 +30,7 @@ templates_path = ['_templates']
 
 master_doc = 'index'
 project = 'Kitworks API'
-copyright = '2010-{}, Read the Docs, Inc & contributors'.format(
+copyright = '2020-{}, Kitworks Systems'.format(
     datetime.datetime.now().year
 )
 version = '1.0.1'
