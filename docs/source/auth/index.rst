@@ -64,14 +64,13 @@ Authentication
           ]
         }
 
-
-    :json string name: Token value
-    :json integer user_id: ID of user who was authorised
-    :json string expire_date: Date of token expiration
-    :json boolean is_expired: Is token expired
-    :json string refresh_token: Refresh token value
-    :json string refresh_expire_date: Date of refresh token expiration
-    :json boolean is_refresh_token_expired: Is refresh token expired
+    :>json string name: Token value
+    :>json integer user_id: ID of user who was authorised
+    :>json string expire_date: Date of token expiration
+    :>json boolean is_expired: Is token expired
+    :>json string refresh_token: Refresh token value
+    :>json string refresh_expire_date: Date of refresh token expiration
+    :>json boolean is_refresh_token_expired: Is refresh token expired
     :query string login: User login
     :query string password: User password
 
