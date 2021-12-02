@@ -5,21 +5,25 @@ Kitworks API Specification
 
     This project is under active development.
 
+Authentication
+--------------
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :glob:
-   :caption: Base usage
+   :caption: Authentication
 
-   auth
-   currencies
+   auth/index
+   currencies/index
 
+Products
+--------
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :glob:
-   :caption: Product
+   :caption: Products
 
    products/products
