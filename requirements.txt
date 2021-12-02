@@ -1,5 +1,6 @@
 Sphinx==4.3.0
 Pygments==2.10.0
+docutils
 
 sphinx_rtd_theme==1.0.0
 sphinx-tabs==3.2.0
