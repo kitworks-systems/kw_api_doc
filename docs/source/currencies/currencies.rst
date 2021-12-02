@@ -1,10 +1,10 @@
-Currencies
+Валюти
 ================
 
 Отримання списку всіх валют
 -----------------------------
 
-GET /kw_api/integration/currencie
+GET /kw_api/integration/currencies
 
 У результаті запиту отримуємо списку всіх валют.
 
