@@ -27,3 +27,15 @@ Products
    :caption: Products
 
    products/products
+
+Sale Order
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Sale Orders
+
+   sale_orders/sale_orders_stages
+   sale_orders/sale_orders
