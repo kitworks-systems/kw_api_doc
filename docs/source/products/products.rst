@@ -799,6 +799,8 @@
            }
         }
 
+
     :statuscode 404: Product not found
+
 
     :query int product_id: url параметр ідентифікатор продукту
