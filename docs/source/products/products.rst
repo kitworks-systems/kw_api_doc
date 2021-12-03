@@ -435,7 +435,6 @@
            }
         }
 
-
     :>json string name: назва категорії
     :query int product_category_id: ідентифікатор категоріï продукту
 
@@ -701,7 +700,7 @@
              "barcode":"string",
              "image_url":"https://examples-url.jpg",
              "currency_id":0
-          }
+         }
 
 
     **Example response**:
@@ -738,23 +737,22 @@
            ]
         }
 
-
     **Обов'язкові поля відмічені '*'**
 
-    :>json string name: назва продукту*
+    :>json string name: назва продукту'*'
     :>json boolean sale_ok: флаг товару що продається/не продається
     :>json string description: опис товару
     :>json string description_purchase: опис товару покупки
     :>json string description_sale: опис товару продажу
     :>json string type: тип товару, ``consu`` - витратний матеріал, ``service`` - сервіс, ``product`` - продукт*
     :>json boolean rental: флаг товару можливо здати в оренду
-    :>json int categ_id: категорія продукту (GET /kw_api/integration/categories)*
+    :>json int categ_id: категорія продукту (GET /kw_api/integration/categories)'*'
     :>json float list_price: основна ціна товару
     :>json float standard_price: стандартна ціна товару
     :>json float price_extra: націнка конкретного варіанта товару
     :>json int taxes_id:  ідентифікатор податку
     :>json boolean purchase_ok: флаг товару що купується/не купується
-    :>json boolean active:  флаг активного товару/товару в архіві*
+    :>json boolean active:  флаг активного товару/товару в архіві'*'
     :>json boolean is_product_variant: флаг товару що є варіантом/не є варіантом шаблона товару
     :>json string default_code: код товару
     :>json string barcode: унікальний код товару
