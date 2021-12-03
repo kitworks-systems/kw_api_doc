@@ -652,7 +652,7 @@
 
 .. http:post:: /kw_api/integration/product_templates/(int:product_template_id)
 
-   У результаті запиту створюємо продукти який є варіантом  шаблона за id номером шаблона.
+    У результаті запиту створюємо продукти який є варіантом  шаблона за id номером шаблона.
 
     **Example request**:
 
@@ -701,7 +701,6 @@
              "image_url":"https://examples-url.jpg",
              "currency_id":0
          }
-
 
     **Example response**:
 
@@ -766,7 +765,7 @@
 
 .. http:delete:: /kw_api/integration/products/(int:product_id)
 
-   У результаті запиту продукту за id номером буде заархівовано.
+    У результаті запиту продукту за id номером буде заархівовано.
 
     **Example request**:
 
@@ -799,6 +798,4 @@
 
 
     :statuscode 404: Product not found
-
-
     :query int product_id: url параметр ідентифікатор продукту
