@@ -447,11 +447,10 @@
     :>json int payment_term_id: ідентифікатор терміну оплати
     :>json string commitment_date: дата підтвердження ( формат - ``%Y-%m-%d %H:%M:%S``)
     :>json string client_order_ref: коментар клієнта до замовлення
-    :>json list order_line: массив товарів/послуг:
-        :>json int product_id: ідентифікатор продукту *
-        :>json string name: ім’я продукту
-        :>json int product_uom_qty: кількість продукту
-        :>json float price_unit: массив товарів/послуг
+    :>json int product_id: ідентифікатор продукту *
+    :>json string name: ім’я продукту
+    :>json int product_uom_qty: кількість продукту
+    :>json float price_unit: ціна продукту
     :>json int currency_id: ідентифікатор валюти оплати
     :>json string kw_sale_order_number: номер заказу з сайту
     :>json string kw_website: сайт заказу
@@ -468,3 +467,5 @@
     :>json string kw_shipping_type: тип доставки (``self``, ``courier``)
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
+
+
