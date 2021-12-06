@@ -62,3 +62,15 @@ Users
    :caption: Users
 
    users/users
+
+
+Partners
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Partners
+
+   partners/partners
