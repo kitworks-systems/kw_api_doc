@@ -39,3 +39,14 @@ Sale Order
 
    sale_orders/sale_orders_stages
    sale_orders/sale_orders
+
+CRM Lead
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: CRM Lead
+
+   crm_lead/crm_lead

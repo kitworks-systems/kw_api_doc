@@ -660,7 +660,7 @@
 
 .. http:delete:: /kw_api/integration/sales/(int:sale_order_id)
 
-   У результаті запиту архівуємо замовлення на продаж за id номером.
+    У результаті запиту архівуємо замовлення на продаж за id номером.
 
     **Example request**:
 
@@ -692,5 +692,6 @@
         }
 
 
-    :statuscode 404: Product not found
+    :statuscode 404: Order not found
+
     :query int sale_order_id: url параметр ідентифікатор продукту
