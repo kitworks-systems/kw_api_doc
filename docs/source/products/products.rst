@@ -552,7 +552,7 @@
     :>json boolean is_product_variant: флаг товару що є варіантом/не є варіантом шаблона товару
     :>json string default_code: код товару
     :>json string barcode: унікальний код товару
-    :>json url image_url: url картинки товару
+    :>json string image_url: url картинки товару
     :>json int currency_id: ідентифікатор валюти оплати
 
 
@@ -755,7 +755,7 @@
     :>json boolean is_product_variant: флаг товару що є варіантом/не є варіантом шаблона товару
     :>json string default_code: код товару
     :>json string barcode: унікальний код товару
-    :>json url image_url: url картинки товару
+    :>json string image_url: url картинки товару
     :>json int currency_id: ідентифікатор валюти оплати
     :query int product_template_id: ідентифікатор категоріï продукту
 
