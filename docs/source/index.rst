@@ -50,3 +50,15 @@ CRM Lead
    :caption: CRM Lead
 
    crm_lead/crm_lead
+
+
+Users
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Users
+
+   users/users
