@@ -74,3 +74,36 @@ Partners
    :caption: Partners
 
    partners/partners
+
+Delivery
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Delivery
+
+   delivery/delivery
+
+Website
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Website
+
+   website/website
+
+Car Services
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Car Services
+
+   car_services/car_services
