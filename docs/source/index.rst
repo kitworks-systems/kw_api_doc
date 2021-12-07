@@ -27,6 +27,9 @@ Products
    :caption: Products
 
    products/products
+   products/product_images
+   products/product_brands
+   products/product_quants
 
 Sale Order
 --------
@@ -107,3 +110,16 @@ Car Services
    :caption: Car Services
 
    car_services/car_services
+
+Sizes
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: Sizes
+
+   sizes/sizes
+   sizes/size_charts
+   sizes/size_chart_categories
