@@ -103,3 +103,62 @@
 
 
 :query int carrier_id: url параметр ідентифікатор метода доставки
+
+Отримання всіх існуючих тайм слотів
+------------------
+.. http:get::  /kw_api/integration/delivery_time_slot
+
+    У результаті запиту отримуємо список усіх доступних тайм слотів.
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl http://localhost/kw_api/integration/delivery_time_slot
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/integration/delivery_time_slot'
+            response = requests.get(URL)
+            print(response.json())
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+{
+    "result": {
+        "content": [
+            {
+                "id": 1,
+                "name": "string",
+                "carrier_id": 1,
+                "active": true,
+                "start_date": "2021-07-26",
+                "tz": "Europe/Kiev",
+                "set_ids": [
+                    {
+                        "id": 1,
+                        "name": "string",
+                        "rule_id": 1,
+                        "active": true,
+                        "slot_ids": [
+                            {
+                                "id": 1,
+                                "name": "string"
+                            },
+                            {
+                                "id": 2,
+                                "name": "string"
+                            }
+                        ]
+                    }
+                ]
+            },
+        ],
+    }
+}
