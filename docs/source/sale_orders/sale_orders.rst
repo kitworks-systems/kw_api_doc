@@ -73,6 +73,7 @@
                     }
                  ],
               "currency_id":1,
+              "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",
               "kw_website_id":1,
@@ -81,13 +82,23 @@
               "kw_shipping_phone":"string",
               "kw_shipping_city":"string",
               "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
               "kw_discount_code":"string",
               "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
               "kw_self_point":"string",
               "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
               }
            ]
         }
@@ -164,6 +175,7 @@
                  }
               ],
               "currency_id":1,
+              "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",
               "kw_website_id":1,
@@ -172,13 +184,23 @@
               "kw_shipping_phone":"string",
               "kw_shipping_city":"string",
               "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
               "kw_discount_code":"string",
               "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
               "kw_self_point":"string",
               "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
            }
         }
 
@@ -256,6 +278,7 @@
                  }
               ],
               "currency_id":1,
+              "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",
               "kw_website_id":1,
@@ -264,13 +287,23 @@
               "kw_shipping_phone":"string",
               "kw_shipping_city":"string",
               "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
               "kw_discount_code":"string",
               "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
               "kw_self_point":"string",
               "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
            }
         }
 
@@ -339,6 +372,7 @@
                     }
                  ],
               "currency_id":1,
+              "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",
               "kw_website_id":1,
@@ -347,13 +381,23 @@
               "kw_shipping_phone":"string",
               "kw_shipping_city":"string",
               "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
               "kw_discount_code":"string",
               "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
               "kw_self_point":"string",
               "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
               }
            ]
         }
@@ -411,6 +455,7 @@
                         }
                     ],
               "currency_id":1,
+              "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",
               "kw_website_id":1,
@@ -419,19 +464,30 @@
               "kw_shipping_phone":"string",
               "kw_shipping_city":"string",
               "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
               "kw_discount_code":"string",
               "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
               "kw_self_point":"string",
               "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
                 }
             ]
         }
 
 
     **Обов'язкові поля відмічені '*'**
+    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"
 
     :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
     :>json int user_id: порядковий номер
@@ -527,20 +583,32 @@
               }
            ],
            "currency_id":1,
+           "carrier_id": 4,
            "kw_sale_order_number":"string",
            "kw_website":"string",
+           "kw_website_id":1,
            "kw_is_same_billing_shipping":false,
            "kw_shipping_name":"string",
            "kw_shipping_phone":"string",
            "kw_shipping_city":"string",
            "kw_shipping_address":"string",
-           "kw_shipping_detail_date":"2021-01-01",
+           "kw_shipping_house": "string",
+           "kw_shipping_flat": "string",
+           "kw_shipping_detail_date": "2021-12-16",
            "kw_discount_code":"string",
            "kw_payment_state":"string",
-           "kw_payment_type":"bearer",
-           "kw_shipping_type":"bearer",
+           "kw_payment_type":"string",
+           "kw_shipping_type":"string",
            "kw_self_point":"string",
            "kw_stage_id":0
+           "kw_car_service_id": 1,
+           "kw_np_service_type": "string",
+           "kw_np_payer_type": "string",
+           "kw_np_cargo_type": "string",
+           "kw_np_delivery_weight": 2,
+           "kw_np_delivery_volume": 0,
+           "kw_np_delivery_so_cost": 1000,
+           "kw_time_slot_id":1
         }
 
 
@@ -597,21 +665,33 @@
                  }
               }
            ],
-              "currency_id":1,
-              "kw_sale_order_number":"string",
-              "kw_website":"string",
-              "kw_is_same_billing_shipping":false,
-              "kw_shipping_name":"string",
-              "kw_shipping_phone":"string",
-              "kw_shipping_city":"string",
-              "kw_shipping_address":"string",
-              "kw_shipping_detail_date":"2021-01-01",
-              "kw_discount_code":"string",
-              "kw_payment_state":"string",
-              "kw_payment_type":"bearer",
-              "kw_shipping_type":"bearer",
-              "kw_self_point":"string",
-              "kw_stage_id":0
+           "currency_id":1,
+           "carrier_id": 4,
+           "kw_sale_order_number":"string",
+           "kw_website":"string",
+           "kw_website_id":1,
+           "kw_is_same_billing_shipping":false,
+           "kw_shipping_name":"string",
+           "kw_shipping_phone":"string",
+           "kw_shipping_city":"string",
+           "kw_shipping_address":"string",
+           "kw_shipping_house": "string",
+           "kw_shipping_flat": "string",
+           "kw_shipping_detail_date": "2021-12-16",
+           "kw_discount_code":"string",
+           "kw_payment_state":"string",
+           "kw_payment_type":"string",
+           "kw_shipping_type":"string",
+           "kw_self_point":"string",
+           "kw_stage_id":0
+           "kw_car_service_id": 1,
+           "kw_np_service_type": "string",
+           "kw_np_payer_type": "string",
+           "kw_np_cargo_type": "string",
+           "kw_np_delivery_weight": 2,
+           "kw_np_delivery_volume": 0,
+           "kw_np_delivery_so_cost": 1000,
+           "kw_time_slot_id":1
         }
 
 
