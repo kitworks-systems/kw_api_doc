@@ -487,6 +487,7 @@
 
 
     **Обов'язкові поля відмічені '*'**
+    
     **Для створення доставки необхідно обов'язково переслати поле "carrier_id"
 
     :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
@@ -514,16 +515,23 @@
     :>json boolean kw_is_same_billing_shipping: флаг чи однаковий одержувач і замовник
     :>json string kw_shipping_name: ім’я одержувача
     :>json string kw_shipping_phone: телефон одержувача
-    :>json string kw_shipping_city: місто одержувача
-    :>json string kw_shipping_address: адреса одержувача
+    :>json string kw_shipping_city: місто одержувача, для НП - місто в форматі name/ref (Київ/8d5a980d-391c-11dd-90d9-001a92567626)
+    :>json string kw_shipping_address: адреса одержувача, для НП - відділення в форматі name/ref (Пункт приймання-видачі (до 30 кг): вул. Білоуська, 17/e6627e75-de7e-11e9-b48a-005056b24375)
+    :>json string kw_shipping_house: будинок одержувача, для НП теж
+    :>json string kw_shipping_flat: квартира одержувача, для НП теж
     :>json string kw_shipping_detail_date: дата доставки
     :>json string kw_discount_code: код знижки
     :>json string kw_payment_state: статус оплати (``not_paid``, ``waiting_for_prepayment``, ``partially_paid``, ``paid``)
     :>json string kw_payment_type: тип оплати (``on_delivery``, ``card``)
+    :>json string kw_delivery_price: сума доставки
     :>json string kw_shipping_type: тип доставки (``self``, ``courier``)
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
-
+    :>json int kw_np_service_type: тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse)
+    :>json int kw_np_payer_type: - тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
+    :>json int kw_np_delivery_weight: вага товару НП
+    :>json int kw_np_delivery_volume: об’єм вантажа НП
+    :>json int kw_np_delivery_so_cost: вартість НП
 
 Створення замовлення на продаж
 ------------------
@@ -697,6 +705,8 @@
 
 
     **Обов'язкові поля відмічені '*'**
+    
+    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"
 
     :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
     :>json int user_id: порядковий номер
@@ -723,16 +733,23 @@
     :>json boolean kw_is_same_billing_shipping: флаг чи однаковий одержувач і замовник
     :>json string kw_shipping_name: ім’я одержувача
     :>json string kw_shipping_phone: телефон одержувача
-    :>json string kw_shipping_city: місто одержувача
-    :>json string kw_shipping_address: адреса одержувача
+    :>json string kw_shipping_city: місто одержувача, для НП - місто в форматі name/ref (Київ/8d5a980d-391c-11dd-90d9-001a92567626)
+    :>json string kw_shipping_address: адреса одержувача, для НП - відділення в форматі name/ref (Пункт приймання-видачі (до 30 кг): вул. Білоуська, 17/e6627e75-de7e-11e9-b48a-005056b24375)
+    :>json string kw_shipping_house: будинок одержувача, для НП теж
+    :>json string kw_shipping_flat: квартира одержувача, для НП теж
     :>json string kw_shipping_detail_date: дата доставки
     :>json string kw_discount_code: код знижки
     :>json string kw_payment_state: статус оплати (``not_paid``, ``waiting_for_prepayment``, ``partially_paid``, ``paid``)
     :>json string kw_payment_type: тип оплати (``on_delivery``, ``card``)
+    :>json string kw_delivery_price: сума доставки
     :>json string kw_shipping_type: тип доставки (``self``, ``courier``)
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
-    :query int sale_order_id: ідентифікатор замовлення
+    :>json int kw_np_service_type: тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse)
+    :>json int kw_np_payer_type: - тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
+    :>json int kw_np_delivery_weight: вага товару НП
+    :>json int kw_np_delivery_volume: об’єм вантажа НП
+    :>json int kw_np_delivery_so_cost: вартість НП
 
 
 Видалення замовлення на продаж за id номером
