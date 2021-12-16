@@ -487,8 +487,7 @@
 
 
     **Обов'язкові поля відмічені '*'**
-    
-    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"
+    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"**
 
     :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
     :>json int user_id: порядковий номер
@@ -528,7 +527,7 @@
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
     :>json int kw_np_service_type: тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse)
-    :>json int kw_np_payer_type: - тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
+    :>json int kw_np_payer_type: тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
     :>json int kw_np_delivery_weight: вага товару НП
     :>json int kw_np_delivery_volume: об’єм вантажа НП
     :>json int kw_np_delivery_so_cost: вартість НП
@@ -705,8 +704,7 @@
 
 
     **Обов'язкові поля відмічені '*'**
-    
-    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"
+    **Для створення доставки необхідно обов'язково переслати поле "carrier_id"**
 
     :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
     :>json int user_id: порядковий номер
@@ -746,7 +744,7 @@
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
     :>json int kw_np_service_type: тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse)
-    :>json int kw_np_payer_type: - тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
+    :>json int kw_np_payer_type: тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
     :>json int kw_np_delivery_weight: вага товару НП
     :>json int kw_np_delivery_volume: об’єм вантажа НП
     :>json int kw_np_delivery_so_cost: вартість НП
