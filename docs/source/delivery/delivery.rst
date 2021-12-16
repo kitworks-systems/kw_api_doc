@@ -129,36 +129,42 @@
     **Example response**:
 
     .. sourcecode:: json
-
+    
         {
-            "result": {
-                "content": [
-                    {
+          "result": {
+            "content": [
+              {
+                "id": 1,
+                "name": "string",
+                "carrier_id": 1,
+                "active": true,
+                "start_date": "2021-07-26",
+                "tz": "Europe/Kiev",
+                "set_ids": [
+                  {
+                    "id": 1,
+                    "name": "string",
+                    "rule_id": 1,
+                    "active": true,
+                    "slot_ids": [
+                      {
                         "id": 1,
-                        "name": "string",
-                        "carrier_id": 1,
-                        "active": true,
-                        "start_date": "2021-07-26",
-                        "tz": "Europe/Kiev",
-                        "set_ids": [
-                            {
-                                "id": 1,
-                                "name": "string",
-                                "rule_id": 1,
-                                "active": true,
-                                "slot_ids": [
-                                    {
-                                        "id": 1,
-                                        "name": "string"
-                                    },
-                                    {
-                                        "id": 2,
-                                        "name": "string"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
+                        "name": "string"
+                      },
+                      {
+                        "id": 2,
+                        "name": "string"
+                      }
+                    [
+                  }
                 ],
-            }
+              }
+            ],
+            "totalElements": 1,
+            "totalPages": 1,
+            "numberOfElements": 1,
+            "number": 0,
+            "Last": false
+          }
         }
+
