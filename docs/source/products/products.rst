@@ -79,6 +79,47 @@
         }
 
 
+Отримання списку всіх відредактованих продуктів за останню годину
+------------------
+
+.. http:get:: /kw_api/integration/product_price_update
+
+    У результаті запиту отримуємо список всіх відредактованих за останню годину продуктів.
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl http://localhost/kw_api/integration/product_price_update
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/integration/product_price_update'
+            response = requests.get(URL)
+            print(response.json())
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+            "result": [
+                {
+                    "id": 1,
+                    "name": "string",
+                    "list_price": 0,
+                    "standard_price": 0
+                }
+            ]
+        }
+
+    :query string update_date: час з якого показати редактовані продукти, формат - ``YYYY-MM-DDThh:mm:ss``
+
+
 Отримання продукту за id номером
 --------------------------------------------------
 
