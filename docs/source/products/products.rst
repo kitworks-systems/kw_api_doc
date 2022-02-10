@@ -109,10 +109,26 @@
         {
             "result": [
                 {
-                    "id": 1,
-                    "name": "string",
-                    "list_price": 0,
-                    "standard_price": 0
+                    "id": 15,
+                    "name": "qq11aa22",
+                    "list_price": 1.0,
+                    "price": 1.0,
+                    "promo_price": 1.0,
+                    "currency": "UAH",
+                    "currency_prices": [
+                        {
+                            "list_price": 1.0,
+                            "price": 1.0,
+                            "promo_price": 1.0,
+                            "currency": "EUR"
+                        },
+                        {
+                            "list_price": 1.0,
+                            "price": 1.0,
+                            "promo_price": 1.0,
+                            "currency": "USD"
+                        }
+                    ]
                 }
             ]
         }
