@@ -49,6 +49,9 @@
                 "kw_packing_size": "string",
                 "kw_manufacture_country_id": "Ukraine",
                 "kw_target_id": "boy",
+                "kw_seo_title": "string",
+                "kw_seo_description": "string",
+                "kw_seo_keywords": "string",
                 "kw_magic_type_ids": [
                     {
                         "id":1,
@@ -171,6 +174,9 @@
             "kw_packing_size": "string",
             "kw_manufacture_country_id": "Ukraine",
             "kw_target_id": "boy",
+            "kw_seo_title": "string",
+            "kw_seo_description": "string",
+            "kw_seo_keywords": "string",
             "kw_magic_type_ids": [
                 {
                     "id":1,
@@ -532,6 +538,9 @@
                  "kw_packing_size": "string",
                  "kw_manufacture_country_id": "Ukraine",
                  "kw_target_id": "boy",
+                 "kw_seo_title": "string",
+                 "kw_seo_description": "string",
+                 "kw_seo_keywords": "string",
                  "kw_magic_type_ids": [
                      {
                          "id":1,
@@ -613,6 +622,9 @@
                  "kw_packing_size": "string",
                  "kw_manufacture_country_id": "Ukraine",
                  "kw_target_id": "boy",
+                 "kw_seo_title": "string",
+                 "kw_seo_description": "string",
+                 "kw_seo_keywords": "string",
                  "kw_magic_type_ids": [
                      {
                          "id":1,
@@ -689,6 +701,9 @@
     :>json string kw_material_type_ids: тип матерiалу
     :>json string kw_progress_ids: розвиток
     :>json string kw_education_ids: рiвень освiти
+    :>json string kw_seo_title: найменування SEO
+    :>json string kw_seo_description: опис SEO
+    :>json string kw_seo_keywords: ключовi слова
     :>json float price_extra: націнка конкретного варіанта товару
     :>json int taxes_id:  ідентифікатор податку
     :>json boolean purchase_ok: флаг товару що купується/не купується
@@ -749,6 +764,9 @@
              "kw_packing_size": "string",
              "kw_manufacture_country_id": "Ukraine",
              "kw_target_id": "boy",
+             "kw_seo_title": "string",
+             "kw_seo_description": "string",
+             "kw_seo_keywords": "string",
              "kw_magic_type_ids": [
                  {
                      "id":1,
@@ -828,6 +846,9 @@
                  "kw_packing_size": "string",
                  "kw_manufacture_country_id": "Ukraine",
                  "kw_target_id": "boy",
+                 "kw_seo_title": "string",
+                 "kw_seo_description": "string",
+                 "kw_seo_keywords": "string",
                  "kw_magic_type_ids": [
                      {
                          "id":1,
