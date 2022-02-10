@@ -123,3 +123,14 @@ Sizes
    sizes/sizes
    sizes/size_charts
    sizes/size_chart_categories
+
+M5
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+   :caption: M5
+
+   m5/products
