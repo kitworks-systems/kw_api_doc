@@ -41,6 +41,16 @@
                 "type": "bearer",
                 "rental": false,
                 "categ_id": 0,
+                "public_categ_ids": [
+                    {
+                        "id":1,
+                        "name": "string",
+                    }
+                    {
+                        "id":2,
+                        "name": "string",
+                    }
+                ],
                 "list_price": 0,
                 "standard_price": 0,
                 "kw_age_id": 0,
@@ -166,6 +176,16 @@
             "type": "string",
             "rental": false,
             "categ_id": 0,
+            "public_categ_ids": [
+                {
+                    "id":1,
+                    "name": "string",
+                }
+                {
+                    "id":2,
+                    "name": "string",
+                }
+            ],
             "list_price": 0,
             "standard_price": 8,
             "kw_age_id": 0,
@@ -289,6 +309,16 @@
                     "type":"consu",
                     "rental":false,
                     "categ_id":0,
+                    "public_categ_ids": [
+                        {
+                            "id":1,
+                            "name": "string",
+                        }
+                        {
+                            "id":2,
+                            "name": "string",
+                        }
+                    ],
                     "list_price":0.0,
                     "standard_price":0.0,
                     "kw_age_id": 0,
@@ -408,7 +438,17 @@
               "description_sale":"string",
               "type":"bearer",
               "rental":false,
-              "categ_id":null,
+              "categ_id":0,
+              "public_categ_ids": [
+                    {
+                        "id":1,
+                        "name": "string",
+                    }
+                    {
+                        "id":2,
+                        "name": "string",
+                    }
+              ],
               "list_price":0.0,
               "standard_price":0.0,
               "kw_age_id": 0,
@@ -530,6 +570,16 @@
                  "type":"product",
                  "rental":false,
                  "categ_id":1,
+                 "public_categ_ids": [
+                     {
+                         "id":1,
+                         "name": "string",
+                     }
+                     {
+                         "id":2,
+                         "name": "string",
+                     }
+                 ],
                  "list_price":0.0,
                  "standard_price":0.0,
                  "kw_age_id": 0,
@@ -613,7 +663,17 @@
                  "description_sale":"string",
                  "type":"product",
                  "rental":false,
-                 "categ_id":"product.category()",
+                 "categ_id":0,
+                 "public_categ_ids": [
+                     {
+                         "id":1,
+                         "name": "string",
+                     }
+                     {
+                         "id":2,
+                         "name": "string",
+                     }
+                 ],
                  "list_price":0.0,
                  "standard_price":0.0,
                  "kw_age_id": 0,
@@ -689,6 +749,7 @@
     :>json string type: тип товару, ``consu`` - витратний матеріал, ``service`` - сервіс, ``product`` - продукт*
     :>json boolean rental: флаг товару можливо здати в оренду
     :>json int categ_id: категорія продукту (GET /kw_api/integration/categories)*
+    :>json int public_categ_ids: категорії продукту (GET /kw_api/m5/integration/categories)
     :>json float list_price: основна ціна товару
     :>json float standard_price: стандартна ціна товару
     :>json int kw_age_id: вiк
@@ -756,6 +817,16 @@
              "type":"product",
              "rental":false,
              "categ_id":1,
+             "public_categ_ids": [
+                {
+                    "id":1,
+                    "name": "string",
+                }
+                {
+                    "id":2,
+                    "name": "string",
+                }
+             ],
              "list_price":0.0,
              "standard_price":0.0,
              "kw_age_id": 0,
@@ -837,7 +908,17 @@
                  "description_sale":"string",
                  "type":"product",
                  "rental":false,
-                 "categ_id":"product.category()",
+                 "categ_id":0,
+                 "public_categ_ids": [
+                     {
+                         "id":1,
+                         "name": "string",
+                     }
+                     {
+                         "id":2,
+                         "name": "string",
+                     }
+                 ],
                  "list_price":0.0,
                  "standard_price":0.0,
                  "kw_age_id": 0,
@@ -945,6 +1026,16 @@
              "type":"product",
              "rental":false,
              "categ_id":1,
+             "public_categ_ids": [
+                {
+                    "id":1,
+                    "name": "string",
+                }
+                {
+                    "id":2,
+                    "name": "string",
+                }
+             ],
              "list_price":0.0,
              "standard_price":0.0,
              "kw_age_id": 0,
@@ -1025,7 +1116,17 @@
                  "description_sale":"string",
                  "type":"product",
                  "rental":false,
-                 "categ_id":"product.category()",
+                 "categ_id":0,
+                 "public_categ_ids": [
+                     {
+                         "id":1,
+                         "name": "string",
+                     }
+                     {
+                         "id":2,
+                         "name": "string",
+                     }
+                 ],
                  "list_price":0.0,
                  "standard_price":0.0,
                  "kw_age_id": 0,
@@ -1101,6 +1202,7 @@
     :>json string type: тип товару, ``consu`` - витратний матеріал, ``service`` - сервіс, ``product`` - продукт*
     :>json boolean rental: флаг товару можливо здати в оренду
     :>json int categ_id: категорія продукту (GET /kw_api/integration/categories)'*'
+    :>json int public_categ_ids: категорії продукту (GET /kw_api/m5/integration/categories)
     :>json float list_price: основна ціна товару
     :>json float standard_price: стандартна ціна товару
     :>json int kw_age_id: вiк
