@@ -1125,7 +1125,7 @@
     :>json string barcode: унікальний код товару
     :>json string image_url: url картинки товару
     :>json int currency_id: ідентифікатор валюти оплати
-    :query int product_template_id: ідентифікатор категоріï продукту
+    :query int product_template_id: ідентифікатор продукту
 
 
 Видалення продукту за id номером
@@ -1167,3 +1167,190 @@
 
     :statuscode 404: Product not found
     :query int product_id: url параметр ідентифікатор продукту
+
+
+Отримання списку всіх категорій
+--------------------------------------------------
+
+.. http:get:: /kw_api/m5/integration/categories
+
+    У результаті запиту отримуємо списку всіх категорій продукту.
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl http://localhost/kw_api/m5/integration/categories
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/m5/integration/categories'
+            response = requests.get(URL)
+            print(response.json())
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+           "result":{
+              "content":[
+                 {
+                    "id":0,
+                    "name":"string",
+                    "parent_id":0,
+                    "sequence":10000,
+                    "images_url":"http://url/kw_api/integration/image/product.image/0/image_1920/"
+                 }
+              ],
+              "totalElements":1,
+              "totalPages":1,
+              "numberOfElements":1,
+              "number":0,
+              "last":false
+           }
+        }
+
+
+Створення списку категорій
+--------------------------------------------------
+
+.. http:post:: /kw_api/m5/integration/categories
+
+    У результаті запиту отримуємо список всіх категорій продукту.
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl \
+                -X POST \
+                -H "Content-Type: application/json" \
+                -d @body.json \
+                http://localhost/kw_api/m5/integration/categories
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/m5/integration/categories'
+            data = json.load(open('body.json', 'rb'))
+            response = requests.post(URL, json=data)
+            print(response.json())
+
+    The content of body.json is like:
+
+    .. code-block:: json
+
+        {
+           "categories":[
+              {
+                 "name":"string",
+                 "parent_id":0,
+                 "sequence":10000,
+                 "images_url":"https://examples-url.jpg"
+              }
+           ]
+        }
+
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+           "result":{
+              "content":[
+                 {
+                    "id":0,
+                    "name":"string",
+                    "parent_id":0,
+                    "sequence":10000,
+                    "images_url":"https://examples-url.jpg"
+                 }
+              ],
+              "totalElements":1,
+              "totalPages":1,
+              "numberOfElements":1,
+              "number":0,
+              "last":false
+           }
+        }
+
+
+    :>json string name: назва категорії
+    :>json int parent_id: батьківський ідентифікатор категорії
+    :>json int sequence: послідовність
+    :>json string images_url: url картинки категорiї
+
+Редагування категорії товару за id
+--------------------------------------------------
+
+.. http:post:: /kw_api/m5/integration/categories/(int:product_category_id)
+
+    У результаті запиту редагуємо категорію за id.
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl \
+                -X POST \
+                -H "Content-Type: application/json" \
+                -d @body.json \
+                http://localhost/kw_api/m5/integration/categories/(int:product_category_id)
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            URL = 'http://localhost/kw_api/m5/integration/categories/(int:product_category_id)'
+            data = json.load(open('body.json', 'rb'))
+            response = requests.post(URL, json=data)
+            print(response.json())
+
+    The content of body.json is like:
+
+    .. code-block:: json
+
+        {
+          {
+              "name":"string",
+              "parent_id":0,
+              "sequence":10000,
+              "images_url":"https://examples-url.jpg"
+          }
+        }
+
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+           "result":{
+             {
+                "id":0,
+                "name":"string",
+                "parent_id":0,
+                "sequence":10000,
+                "images_url":"https://examples-url.jpg"
+             }
+           }
+        }
+
+    **Обов'язкові поля відмічені '*'**
+
+    :>json string name: назва категорії'*'
+    :>json int parent_id: батьківський ідентифікатор категорії
+    :>json int sequence: послідовність
+    :>json string images_url: url картинки категорiї
+    :query int product_template_id: ідентифікатор категоріï продукту
