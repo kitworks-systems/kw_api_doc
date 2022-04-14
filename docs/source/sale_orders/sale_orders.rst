@@ -19,8 +19,9 @@
 
             import requests
             import json
-            URL = 'http://localhost/kw_api/integration/sales/(int:sale_order_id)'
-            response = requests.get(URL)
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
+            URL = 'http://localhost/kw_api/integration/sales'
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
