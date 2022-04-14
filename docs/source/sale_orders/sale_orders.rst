@@ -13,7 +13,10 @@
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/sales/(int:sale_order_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/sales 
 
         .. code-tab:: python
 
