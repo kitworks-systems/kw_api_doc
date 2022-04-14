@@ -12,7 +12,7 @@
     .. tabs::
 
         .. code-tab:: bash
-        $ curl \
+            $ curl \
                 -X GET \
                 -H "Authorization: Bearer_ + Your Api Key" \
                 http://localhost/kw_api/integration/sales
