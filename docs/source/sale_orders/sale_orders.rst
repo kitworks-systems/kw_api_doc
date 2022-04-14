@@ -7,9 +7,9 @@
 
     У результаті запиту отримуємо списку всіх продажів.
     
-.. attention::
+    .. attention::
 
-    Api Key - ключ для особистого доступу до API (required in header)
+        Api Key - ключ для особистого доступу до API (required in header)
     
     **Example request**:
 
