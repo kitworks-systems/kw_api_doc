@@ -10,12 +10,13 @@
     **Example request**:
 
     .. tabs::
-
+    
         .. code-tab:: bash
+
             $ curl \
                 -X GET \
                 -H "Authorization: Bearer_ + Your Api Key" \
-                http://localhost/kw_api/integration/sales
+                http://localhost/kw_api/integration/sales       
 
         .. code-tab:: python
 
