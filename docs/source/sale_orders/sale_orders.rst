@@ -13,22 +13,15 @@
 
         .. code-tab:: bash
 
-            $ curl \
-                -X POST \
-                -H "Content-Type: application/json" \
-                -d @body.json \
-                http://localhost/kw_api/integration/sales    
+            $ curl http://localhost/kw_api/integration/sales/(int:sale_order_id)
 
         .. code-tab:: python
 
             import requests
             import json
-            headers = {'Authorization': 'Bearer_ + Your Api Key'}
-            URL = 'http://localhost/kw_api/integration/sales'
-            response = requests.get(URL, headers=headers)
+            URL = 'http://localhost/kw_api/integration/sales/(int:sale_order_id)'
+            response = requests.get(URL)
             print(response.json())
-
-    Api Key - для особистого доступу до API (required in headers)
 
     **Example response**:
 
