@@ -6,6 +6,9 @@
 .. http:get:: /kw_api/integration/sales
 
     У результаті запиту отримуємо списку всіх продажів.
+    
+.. attention::
+
     Api Key - ключ для особистого доступу до API (required in header)
     
     **Example request**:
