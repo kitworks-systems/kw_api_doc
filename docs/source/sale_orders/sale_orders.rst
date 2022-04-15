@@ -116,7 +116,7 @@
 ------------------
 .. http:get:: /kw_api/integration/sales/(int:sale_order_id)
 
-    У результаті запиту отримуємо списку всіх продажів.
+    У результаті запиту отримуємо замовлення на продаж за id номером.
 
     .. attention::
 
@@ -340,7 +340,7 @@
 ------------------
 .. http:post:: /kw_api/integration/sales
 
-    У результаті запиту отримуємо списку всіх продажів.
+    У результаті запиту створюємо замовлення на продаж.
 
     .. attention::
 
@@ -569,6 +569,10 @@
 
     У результаті запиту створюємо замовлення на продаж.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
@@ -577,17 +581,19 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
-                http://localhost/kw_api/integration/sales/(int:sale_order_id)
+                http://localhost/kw_api/integration/sales/(int:sale_order_id)/salesperson/(int:user_id)
 
         .. code-tab:: python
-
+            
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/sales/(int:sale_order_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -789,6 +795,10 @@
 
     У результаті запиту архівуємо замовлення на продаж за id номером.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
@@ -797,14 +807,15 @@
 
             $ curl \
                 -X DELETE \
-                -H "Content-Type: application/json" \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 http://localhost/kw_api/integration/sales/(int:sale_order_id)
 
         .. code-tab:: python
 
             import requests
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/sales/(int:sale_order_id)'
-            response = requests.delete(URL)
+            response = requests.delete(URL, headers=headers)
             print(response.json())
 
 
