@@ -501,6 +501,10 @@
 
     У результаті запиту редагуємо категорію за id.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
@@ -559,6 +563,10 @@
 
     У результаті запиту створюємо продукти.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
@@ -678,6 +686,10 @@
 
     У результаті запиту редагуємо продукт.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
@@ -771,6 +783,10 @@
 
     У результаті запиту створюємо продукти який є варіантом  шаблона за id номером шаблона.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
@@ -886,6 +902,10 @@
 
     У результаті запиту продукту за id номером буде заархівовано.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
