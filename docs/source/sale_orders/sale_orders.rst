@@ -116,19 +116,21 @@
 ------------------
 .. http:get:: /kw_api/integration/sales/(int:sale_order_id)
 
-    У результаті запиту отримуємо замовлення на продаж за id.
+    У результаті запиту отримуємо списку всіх продажів.
+
     .. attention::
 
         Api Key - ключ для особистого доступу до API (required in header)
-        
+
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
+
             $ curl \
                 -X GET \
-                -H "Authorization: Bearer_ + Your Api Key" \            
+                -H "Authorization: Bearer_ + Your Api Key" \
                 http://localhost/kw_api/integration/sales/(int:sale_order_id)
 
         .. code-tab:: python
