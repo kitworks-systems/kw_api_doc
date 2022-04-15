@@ -8,20 +8,28 @@
 
     У результаті запиту отримуємо список всіх продуктів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/products
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/products
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/products'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -86,20 +94,28 @@
 
     У результаті запиту отримуємо список всіх відредактованих за останню годину продуктів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/product_price_update
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/product_price_update
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_price_update'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -143,20 +159,28 @@
 
     У результаті запиту отримуємо продукт за id номером.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/products/(int:product_id)/
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/products/(int:product_id)
 
         .. code-tab:: python
 
             import requests
             import json
-            URL = 'http://localhost/kw_api/integration/products/(int:product_id)/'
-            response = requests.get(URL)
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
+            URL = 'http://localhost/kw_api/integration/products/(int:product_id)'
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -200,20 +224,28 @@
 
     У результаті запиту отримуємо список всіх продуктів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/product_templates
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/product_templates
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_templates'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -272,20 +304,28 @@
 
     У результаті запиту отримуємо список всіх продуктів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/product_templates/(int:product_template_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/product_templates/(int:product_template_id)
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_templates/(int:product_template_id)'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -338,20 +378,28 @@
 
     У результаті запиту отримуємо списку всіх категорій продукту.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/categories
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \    
+                http://localhost/kw_api/integration/categories
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/categories'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -382,6 +430,10 @@
 
     У результаті запиту отримуємо списку всіх категорій продукту.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
@@ -390,6 +442,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/categories
@@ -398,9 +451,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/categories'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -455,6 +509,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/categories/(int:product_category_id)
@@ -463,9 +518,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/categories/(int:product_category_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -511,6 +567,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/products
@@ -519,9 +576,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/products'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -628,6 +686,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/products/(int:product_id)
@@ -636,9 +695,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/products/(int:product_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -719,6 +779,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/product_templates/(int:product_template_id)
@@ -727,9 +788,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_templates/(int:product_template_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -832,14 +894,16 @@
 
             $ curl \
                 -X DELETE \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 http://localhost/kw_api/integration/products/(int:product_id)
 
         .. code-tab:: python
 
             import requests
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_templates/(int:product_template_id)'
-            response = requests.delete(URL)
+            response = requests.delete(URL, headers=headers)
             print(response.json())
 
 
