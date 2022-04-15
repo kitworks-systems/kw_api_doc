@@ -227,7 +227,11 @@
 ------------------
 .. http:get::  /kw_api/integration/sales/(int:sale_order_id)/salesperson/(int:user_id)
 
-    У результаті запиту отримуємо замовлення на продаж за id.
+    У результаті запиту отримуємо списку всіх продажів.
+
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
 
     **Example request**:
 
@@ -235,14 +239,18 @@
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/sales/(int:sale_order_id)/salesperson/(int:user_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/sales/(int:sale_order_id)/salesperson/(int:user_id)
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/sales/(int:sale_order_id)/salesperson/(int:user_id)'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
