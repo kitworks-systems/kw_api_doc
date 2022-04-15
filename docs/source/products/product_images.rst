@@ -1,27 +1,35 @@
 Зображення товарів
 ================
 
-Отримання списку всіх картинок за id продукта
+Отримання списку всіх картинок за id продукту
 ------------------
 
-.. http:get:: /kw_api/integration/product_images/(int:product_id)
+.. http:get:: /kw_api/integration/product_images/(int:product_template_id)
 
-    Отримання списку всіх картинок за id продукта
+    Отримання списку всіх картинок за id темплейту продукта
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
-
-            $ curl http://localhost/kw_api/integration/product_images/(int:product_id)
+        
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/product_images/(int:product_template_id)
 
         .. code-tab:: python
 
             import requests
             import json
-            URL = 'http://localhost/kw_api/integration/product_images/(int:product_id)'
-            response = requests.get(URL)
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
+            URL = 'http://localhost/kw_api/integration/product_images/(int:product_template_id)'
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -69,6 +77,10 @@
 
 .. http:post:: /kw_api/integration/product_images
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     У результаті запиту створюємо картинки.
 
     **Example request**:
@@ -79,6 +91,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/product_images
@@ -87,9 +100,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_images'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -144,6 +158,10 @@
 
     У результаті запиту створюємо картинки.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
@@ -152,6 +170,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/product_images/(int:product_img_id)
@@ -160,9 +179,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_images/(int:product_img_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
