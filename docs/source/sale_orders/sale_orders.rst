@@ -340,7 +340,11 @@
 ------------------
 .. http:post:: /kw_api/integration/sales
 
-    У результаті запиту створюємо замовлення на продаж.
+    У результаті запиту отримуємо списку всіх продажів.
+
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
 
     **Example request**:
 
@@ -350,6 +354,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/sales
@@ -358,9 +363,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/sales'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
