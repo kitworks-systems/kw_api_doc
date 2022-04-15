@@ -8,20 +8,28 @@
 
     У результаті запиту отримуємо списку всіх кількостей продукта.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/product_quants
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/product_quants
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_quants'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -65,20 +73,28 @@
 
     У результаті запиту отримуємо кількость продукту  за id.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/product_quants/(int:product_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/product_quants/(int:product_id)
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/product_quants/(int:product_id)'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
