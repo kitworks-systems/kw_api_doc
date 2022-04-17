@@ -7,20 +7,28 @@
 
     У результаті запиту отримуємо списку всіх користувачів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/users
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/users
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/users'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -46,20 +54,27 @@
 
     У результаті запиту отримуємо  CRM контактаки за id.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
-
-            $ curl http://localhost/kw_api/integration/users/(int:user_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/users/(int:user_id)
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/users/(int:user_id)'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
