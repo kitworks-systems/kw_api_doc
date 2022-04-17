@@ -7,20 +7,28 @@
 
     У результаті запиту отримуємо список всіх методів доставки.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/deliveries
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/deliveries
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/deliveries'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -62,20 +70,28 @@
 
     У результаті запиту отримуємо метод доставки за id номером.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+        
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/deliveries/(int:carrier_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/deliveries/(int:carrier_id)
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/deliveries/(int:carrier_id)'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
