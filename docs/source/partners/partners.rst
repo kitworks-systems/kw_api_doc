@@ -7,20 +7,28 @@
 
     У результаті запиту отримуємо списку всіх партнерів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/partners
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/partners
 
         .. code-tab:: python
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/partners'
-            response = requests.get(URL)
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -51,20 +59,28 @@
 
     У результаті запиту отримуємо користувача за id номером.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
 
         .. code-tab:: bash
 
-            $ curl http://localhost/kw_api/integration/partners/(int:partner_id)
+            $ curl \
+                -X GET \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                http://localhost/kw_api/integration/partners/(int:partner_id)
 
         .. code-tab:: python
 
             import requests
             import json
-            URL = 'http://localhost/kw_api/integration/partners/(int:partner_id)'
-            response = requests.get(URL)
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
+            URL = '/kw_api/integration/partners/(int:partner_id)'
+            response = requests.get(URL, headers=headers)
             print(response.json())
 
     **Example response**:
@@ -97,6 +113,10 @@
 
     У результаті запиту створюємо партнерів.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
@@ -105,6 +125,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/partners
@@ -113,9 +134,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/partners'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
@@ -191,6 +213,10 @@
 
     У результаті запиту отримуємо партнера за id.
 
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
     **Example request**:
 
     .. tabs::
@@ -199,6 +225,7 @@
 
             $ curl \
                 -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
                 -H "Content-Type: application/json" \
                 -d @body.json \
                 http://localhost/kw_api/integration/partners/(int:partner_id)
@@ -207,9 +234,10 @@
 
             import requests
             import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
             URL = 'http://localhost/kw_api/integration/partners/(int:partner_id)'
             data = json.load(open('body.json', 'rb'))
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, headers=headers)
             print(response.json())
 
     The content of body.json is like:
