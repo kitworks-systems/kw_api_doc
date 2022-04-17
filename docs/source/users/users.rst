@@ -63,6 +63,7 @@
     .. tabs::
 
         .. code-tab:: bash
+
             $ curl \
                 -X GET \
                 -H "Authorization: Bearer_ + Your Api Key" \
