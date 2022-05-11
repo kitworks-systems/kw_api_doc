@@ -1,11 +1,11 @@
 Управління CRM
 ================
 
-Отримання списку всіх CRM контактів
+Отримання списку всіх CRM лідів
 ------------------
 .. http:get:: /kw_api/integration/leads
 
-    У результаті запиту отримуємо списку всіх CRM контактів.
+    У результаті запиту отримуємо списку всіх CRM лідів.
 
     .. attention::
 
@@ -99,7 +99,7 @@
         }
 
 
-Отримання CRM контакта за id номером
+Отримання CRM ліда за id номером
 ------------------
 .. http:get:: /kw_api/integration/leads/(int:lead_id)
 
@@ -199,7 +199,7 @@
 ------------------
 .. http:post:: /kw_api/integration/leads
 
-    У результаті запиту створюємо CRM контакт.
+    У результаті запиту створюємо CRM лід.
 
     .. attention::
 
@@ -357,18 +357,18 @@
 
     **Обов'язкові поля відмічені '*'**
 
-    :>json string name: назва контакта CRM *
+    :>json string name: назва ліда CRM *
     :>json int partner_id: ідентифікатор партнера
     :>json string date_action_last: дата останньої активності (формат - ``%Y-%m-%d %H:%M:%S``)
-    :>json string email_from:  почта контакта
+    :>json string email_from:  почта з якого прийшлов лід
     :>json sring website:  вебсайт
     :>json int team_id: ідентифікатор команди
     :>json string kanban_stage: етап дошки (``grey``, ``red``, ``green``)
-    :>json string description: опис контакта CRM
+    :>json string description: опис ліда CRM
     :>json string contact_name:  ім’я контакта CRM
     :>json string partner_name: ім’я партнера CRM
-    :>json string type: дтип контакта CRM (``lead``, ``opportunity``) *
-    :>json string priority: пріорітет контакта CRM (``1`` - Low, ``2`` - Medium ,``3`` - High ,``4`` - Very High )
+    :>json string type: тип ліда в CRM - лід або нагода (``lead``, ``opportunity``) *
+    :>json string priority: пріорітет ліда CRM (``1`` - Low, ``2`` - Medium ,``3`` - High ,``4`` - Very High )
     :>json string date_closed: дата закриття ( формат - ``%Y-%m-%d %H:%M:%S``)
     :>json int stage_id: ідентифікатор етапу
     :>json int user_id: ідентифікатор користувача
@@ -378,9 +378,9 @@
     :>json float day_close: скільки днів закрито
     :>json string date_last_stage_update: дата відкриття (формат - ``%Y-%m-%d %H:%M:%S``)
     :>json string date_conversion: дата перетворення (формат - ``%Y-%m-%d %H:%M:%S``)
-    :>json float probability: вірогідність контакта CRM
-    :>json float automated_probability: автоматична вірогідність контакта CRM
-    :>json boolean is_automated_probability: флаг автоматична вірогідність контакта CRM
+    :>json float probability: вірогідність ліда CRM
+    :>json float automated_probability: автоматична вірогідність ліда CRM
+    :>json boolean is_automated_probability: флаг автоматична вірогідність ліда CRM
     :>json string phone_state: статус телефона (``correct``, ``incorrect``)
     :>json string email_state: статус почти (``correct``, ``incorrect``)
     :>json float prorated_revenue: запланований дохід
@@ -406,12 +406,12 @@
     :>json int meeting_count: кількість зустрічей
 
 
-Редагування CRM контакта за id номером
+Редагування CRM ліда за id номером
 --------------------------------------------------
 
 .. http:post:: /kw_api/integration/leads/(int:lead_id)
 
-    У результаті запиту створюємо замовлення CRM контакт за id.
+    У результаті запиту створюємо замовлення CRM лід за id.
 
     .. attention::
 
@@ -564,12 +564,12 @@
     :query int sale_order_id: параметр ідентифікатор замовлення
 
 
-Видалення  контакту CRM за id номером
+Видалення  ліда CRM за id номером
 --------------------------------------------------
 
 .. http:delete:: /kw_api/integration/leads/(int:lead_id)
 
-    У результаті запиту архівуємо  контакт CRM за id номером.
+    У результаті запиту архівуємо  лід CRM за id номером.
 
     .. attention::
 
