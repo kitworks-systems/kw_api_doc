@@ -5,7 +5,7 @@
 ------------------
 .. http:get:: /kw_api/integration/leads
 
-    У результаті запиту отримуємо списку всіх CRM лідів.
+    У результаті запиту отримуємо список всіх CRM лідів.
 
     .. attention::
 
@@ -103,7 +103,7 @@
 ------------------
 .. http:get:: /kw_api/integration/leads/(int:lead_id)
 
-    У результаті запиту отримуємо  CRM контакт за id.
+    У результаті запиту отримуємо  CRM лід за id.
 
     .. attention::
 
@@ -195,7 +195,7 @@
     :query int lead_id: ідентифікатор замовлення
 
 
-Створення CRM контактів
+Створення CRM лідів
 ------------------
 .. http:post:: /kw_api/integration/leads
 
@@ -411,7 +411,7 @@
 
 .. http:post:: /kw_api/integration/leads/(int:lead_id)
 
-    У результаті запиту створюємо замовлення CRM лід за id.
+    У результаті запиту можемо оновити CRM лід за id.
 
     .. attention::
 
