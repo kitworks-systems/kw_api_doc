@@ -1,11 +1,11 @@
-Партнери
+Контакти
 ================
 
-Отримання списку всіх партнерів
+Отримання списку всіх контактів
 ------------------
 .. http:get:: /kw_api/integration/partners
 
-    У результаті запиту отримуємо списку всіх партнерів.
+    У результаті запиту отримуємо списку всіх контактів.
 
     .. attention::
 
@@ -53,7 +53,7 @@
         }
 
 
-Отримання партнера за id номером
+Отримання контакту за id номером
 ------------------
 .. http:get:: /kw_api/integration/partners/(int:partner_id)
 
@@ -103,15 +103,15 @@
         }
 
 
-    :query int partner_id: url параметр ідентифікатор партнера
+    :query int partner_id: url параметр ідентифікатор контакту
 
 
-Створення списку партнерів
+Створення контакту
 --------------------------------------------------
 
 .. http:post:: /kw_api/integration/partners
 
-    У результаті запиту створюємо партнерів.
+    У результаті запиту створюємо контакт.
 
     .. attention::
 
@@ -196,22 +196,22 @@
 
     **Обов'язкові поля відмічені '*'**
 
-    :>json string name: ім’я  партнера*
+    :>json string name: ім’я  контакту*
     :>json string ref: опис
     :>json string website: сайт
-    :>json string phone: телефон партнера*
-    :>json string email: електронна почта партнера*
-    :>json string city: місто партнера
-    :>json string street: адреса партнера
-    :>json string street2: додаткова адреса партнера
+    :>json string phone: телефон контакту*
+    :>json string email: електронна почта контакту*
+    :>json string city: місто контакту
+    :>json string street: адреса контакту
+    :>json string street2: додаткова адреса контакту
 
 
-Редагування партнера за id номером
+Редагування контакту за id номером
 --------------------------------------------------
 
 .. http:post:: /kw_api/integration/partners/(int:partner_id)
 
-    У результаті запиту отримуємо партнера за id.
+    У результаті запиту отримуємо контакту за id.
 
     .. attention::
 
@@ -296,12 +296,12 @@
 
     **Обов'язкові поля відмічені '*'**
 
-    :>json string name: ім’я  партнера*
+    :>json string name: ім’я  контакту*
     :>json string ref: опис
     :>json string website: сайт
-    :>json string phone: телефон партнера*
-    :>json string email: електронна почта партнера*
-    :>json string city: місто партнера
-    :>json string street: адреса партнера
-    :>json string street2: додаткова адреса партнера
-    :query int partner_id: url параметр ідентифікатор партнера
+    :>json string phone: телефон контакту*
+    :>json string email: електронна почта контакту*
+    :>json string city: місто контакту
+    :>json string street: адреса контакту
+    :>json string street2: додаткова адреса контакту
+    :query int partner_id: url параметр ідентифікатор контакту
