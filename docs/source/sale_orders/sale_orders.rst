@@ -81,6 +81,18 @@
                     }
                  ],
               "currency_id":1,
+              "source": {
+                  "id": 0,
+                  "name": "string",
+              },
+              "medium": {
+                  "id": 0,
+                  "name": "string",
+              },
+              "campaign": {
+                  "id": 0,
+                  "name": "string",
+              },
               "carrier_id": 4,
               "kw_sale_order_number":"string",
               "kw_website":"string",

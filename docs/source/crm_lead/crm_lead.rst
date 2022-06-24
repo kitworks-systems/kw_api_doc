@@ -88,6 +88,18 @@
                     "title":0,
                     "company_id":0,
                     "meeting_count":0
+                    "source": {
+                        "id": 0,
+                        "name": "string",
+                    },
+                    "medium": {
+                        "id": 0,
+                        "name": "string",
+                    },
+                    "campaign": {
+                        "id": 0,
+                        "name": "string",
+                    },
                  }
               ],
               "totalElements":1,
