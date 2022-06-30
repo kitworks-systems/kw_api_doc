@@ -61,6 +61,7 @@
                 "barcode": "string",
                 "images_url": "http://url/kw_api/integration/image/product.product/0/image_1920/",
                 "currency_id": 0,
+                "is_published": true,
                 "kw_product_size_chart_id": 1,
                 "kw_product_size_id": 1,
                 "kw_primary_product_size_id": 1,
