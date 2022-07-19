@@ -557,10 +557,10 @@
     :>json boolean kw_is_same_billing_shipping: флаг чи однаковий одержувач і замовник
     :>json string kw_shipping_name: ім’я одержувача
     :>json string kw_shipping_phone: телефон одержувача
-    :>json string kw_shipping_city: місто одержувача, для НП - місто в форматі name/ref (Київ/8d5a980d-391c-11dd-90d9-001a92567626)
-    :>json string kw_shipping_address: адреса одержувача, для НП - відділення в форматі name/ref (Пункт приймання-видачі (до 30 кг): вул. Білоуська, 17/e6627e75-de7e-11e9-b48a-005056b24375)
-    :>json string kw_shipping_house: будинок одержувача, для НП теж
-    :>json string kw_shipping_flat: квартира одержувача, для НП теж
+    :>json string kw_shipping_city: місто одержувача
+    :>json string kw_shipping_address: адреса одержувача
+    :>json string kw_shipping_house: будинок одержувача
+    :>json string kw_shipping_flat: квартира одержувача
     :>json string kw_shipping_detail_date: дата доставки
     :>json string kw_discount_code: код знижки
     :>json string kw_payment_state: статус оплати (``not_paid``, ``waiting_for_prepayment``, ``partially_paid``, ``paid``)
@@ -569,11 +569,246 @@
     :>json string kw_shipping_type: тип доставки (``self``, ``courier``)
     :>json string kw_sefl_point: адреса самовивозу
     :>json int kw_stage_id: ідентифікатор веб статуса
-    :>json int kw_np_service_type: тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse)
-    :>json int kw_np_payer_type: тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient)
+
+
+Створення замовлення на продаж з доставкою НП
+------------------
+.. http:post:: /kw_api/integration/sales
+
+    У результаті запиту створюємо замовлення на продаж з доставкою Новою Поштою. Це розширення дійсне при  встановленому модулі kw_np_api_sale.
+
+    .. attention::
+
+        Api Key - ключ для особистого доступу до API (required in header)
+
+    **Example request**:
+
+    .. tabs::
+
+        .. code-tab:: bash
+
+            $ curl \
+                -X POST \
+                -H "Authorization: Bearer_ + Your Api Key" \
+                -H "Content-Type: application/json" \
+                -d @body.json \
+                http://localhost/kw_api/integration/sales
+
+        .. code-tab:: python
+
+            import requests
+            import json
+            headers = {'Authorization': 'Bearer_ + Your Api Key'}
+            URL = 'http://localhost/kw_api/integration/sales'
+            data = json.load(open('body.json', 'rb'))
+            response = requests.post(URL, json=data, headers=headers)
+            print(response.json())
+
+    Тіло запиту має містити: The content of body.json is like:
+
+    .. code-block:: json
+
+        {
+        "orders":[
+            {
+            "partner_id":"int",
+            "state":"sale",
+            "user_id":"int",
+            "partner_name":"string",
+            "partner_phone":"0000000000",
+            "partner_email":"example@example.com",
+            "date_order": "2000-01-01 00:00:00",
+            "validity_date":"2000-01-01",
+            "payment_term_id":"int",
+            "commitment_date":"2000-01-01 00:00:00",
+            "client_order_ref":"string",
+            "currency_id":1,
+            "carrier_id": 4,
+            "kw_sale_order_number":"int",
+            "kw_website":"string",
+            "kw_website_id":1,
+            "kw_is_same_billing_shipping":false,
+            "kw_shipping_name":"string",
+            "kw_shipping_phone":"string",
+            "kw_shipping_city":"string",
+            "kw_shipping_address":"string",
+            "kw_shipping_house": "string",
+            "kw_shipping_flat": "string",
+            "kw_shipping_detail_date": "2021-12-16",
+            "kw_discount_code":"string",
+            "kw_payment_state":"string",
+            "kw_payment_type":"string",
+            "kw_shipping_type":"string",
+            "kw_self_point":"string",
+            "kw_stage_id":0
+            "kw_car_service_id": "string",
+            "kw_np_service_type": "string",
+            "kw_np_payer_type": "string",
+            "kw_np_cargo_type": "string",
+            "kw_np_delivery_weight": 2,
+            "kw_np_delivery_volume": 0,
+            "kw_np_delivery_so_cost": 1000,
+            "kw_time_slot_id":1
+            "kw_delivery_price": "0.00",
+            "kw_np_payment_form_id": 2,
+            "kw_np_recipient_type_id": 2,
+            "order_line":[
+                    {
+                       "name":"string",
+                       "product_id":0,
+                       "price_unit":0,
+                       "product_uom_qty":0.0
+                    },
+                    {
+                       "name":"string",
+                       "product_id":1,
+                       "price_unit":0,
+                       "product_uom_qty":0.0
+                    }
+                 ],
+              }
+           ]
+        }
+
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+                {
+                    "id": <int>,
+                    "name": <string>,
+                    "state":"string",
+                    "user_id":<int>,
+                    "partner_id": <int>,
+                    "partner_name": <string>,
+                    "partner_phone": "(000)-000-0000",
+                    "partner_email": "example@example.com",
+                    "partner_invoice_id": <int>,
+                    "partner_shipping_id": <int>,
+                ?    "sale_order_template_id": 1,
+                    "validity_date": "2000-01-01",
+                    "date_order": "2000-01-01 00:00:00",
+                    "payment_term_id": 1,
+                    "commitment_date": "2000-01-01 00:00:00",
+                    "client_order_ref": "string",
+                    "amount_untaxed": 0.0,
+                    "amount_tax": null,
+                    "amount_undiscounted": 0.0,
+                    "amount_total": 0.0,
+                    "order_line": [
+                        {
+                            "id": 0,
+                            "product_id": 0,
+                            "image": "http://url/kw_api/integration/image/product.image/0/image_1920/",
+                            "name": "string",
+                            "display_name": "string",
+                            "default_code": null,
+                           "price_unit":0,
+                           "quantity":0
+                        },
+                        {
+                            "id": 1,
+                            "product_id": 1,
+                            "image": "http://url/kw_api/integration/image/product.image/0/image_1920/",
+                            "name": "string",
+                            "display_name": "string",
+                            "default_code": null,
+                           "price_unit":0,
+                           "quantity":0
+                        }
+                    ],
+              "currency_id":1,
+              "carrier_id": 4,
+              "kw_sale_order_number":"string",
+              "kw_website":"string",
+              "kw_website_id":1,
+              "kw_is_same_billing_shipping":false,
+              "kw_shipping_name":"string",
+              "kw_shipping_phone":"string",
+              "kw_shipping_city":"string",
+              "kw_shipping_address":"string",
+              "kw_shipping_house": "string",
+              "kw_shipping_flat": "string",
+              "kw_shipping_detail_date": "2021-12-16",
+              "kw_discount_code":"string",
+              "kw_payment_state":"string",
+              "kw_payment_type":"string",
+              "kw_shipping_type":"string",
+              "kw_self_point":"string",
+              "kw_stage_id":0
+              "kw_car_service_id": "string",
+              "kw_np_service_type": "string",
+              "kw_np_payer_type": "string",
+              "kw_np_cargo_type": "string",
+              "kw_np_delivery_weight": 2,
+              "kw_np_delivery_volume": 0,
+              "kw_np_delivery_so_cost": 1000,
+              "kw_time_slot_id":1
+                }
+            ]
+        }
+
+
+    **Обов'язкові поля відмічені '*'**
+
+    :>json string state: статус замовлення (``draft``, ``sale``, ``sent``, ``done``, ``cancel``)*
+    :>json int user_id: порядковий номер
+    :>json int partner_id: ідентифікатор партнера (``Навіщо він передається??``)
+    :>json string partner_name:  ім’я партнера *
+    :>json sring partner_phone:  телефон партнера *
+    :>json sring partner_email: пошта партнера * (``На спортюа не стоїть перевирка на відсутність цього поля``)
+    :>json int partner_invoice_id: ідентифікатор партнера рахунок-фактури
+    :>json int partner_shipping_id: ідентифікатор партнера доставки
+    :>json int sale_order_template_id: ідентифікатор шаблону замовлення на продаж
+    :>json string validity_date: дата валідації ( формат - ``%Y-%m-%d``)
+    :>json string date_order: дата замовлення ( формат - ``%Y-%m-%d %H:%M:%S``)
+    :>json int payment_term_id: ідентифікатор терміну оплати
+    :>json string commitment_date: дата підтвердження ( формат - ``%Y-%m-%d %H:%M:%S``)
+    :>json string client_order_ref: коментар клієнта до замовлення
+    :>json int product_id: ідентифікатор продукту *
+    :>json string name: ім’я продукту
+    :>json int product_uom_qty: кількість продукту
+    :>json float price_unit: ціна продукту
+    :>json int currency_id: ідентифікатор валюти оплати
+    :>json string kw_sale_order_number: номер заказу з сайту
+    :>json string kw_website: сайт заказу
+    :>json int kw_website_id: індекс вебсайту
+    :>json boolean kw_is_same_billing_shipping: флаг чи однаковий одержувач і замовник
+    :>json string kw_shipping_name: ім’я одержувача
+    :>json string kw_shipping_phone: телефон одержувача
+    :>json string kw_shipping_city: місто одержувача, для НП - місто в форматі name або ref (Київ/8d5a980d-391c-11dd-90d9-001a92567626)
+    :>json string kw_shipping_address: адреса одержувача, для НП - відділення в форматі name/ref (Пункт приймання-видачі (до 30 кг): вул. Білоуська, 17/e6627e75-de7e-11e9-b48a-005056b24375)
+    :>json string kw_shipping_house: будинок одержувача, для НП теж
+    :>json string kw_shipping_flat: квартира одержувача, для НП теж
+    :>json string kw_shipping_detail_date: дата доставки
+    :>json string kw_discount_code: код знижки
+    :>json string kw_payment_state: статус оплати (``not_paid``, ``waiting_for_prepayment``, ``partially_paid``, ``paid``)
+    :>json string kw_payment_type: тип оплати (``on_delivery``, ``card``)
+    :>json int kw_np_payment_form_id: метод оплати для НП. ``1`` (Безготівковий), ``2``(Готівка)
+    :>json string kw_delivery_price: сума доставки
+    :>json string kw_shipping_type: тип доставки (``self``, ``courier``, ``delivery_company``)
+    :>json int kw_stage_id: _?_ ідентифікатор веб статуса
+    :>json int kw_np_service_type: _?_ тип доставки НП, в форматі name/ref (Адреса-Відділення/DoorsWarehouse) (``Адреса-Адреса``, ``Адреса-Відділення``, ``Відділення-Відділення``, ``Відділення-Адреса``, ``Адреса-Поштомат``, ``Відділення-Поштомат``)
+    :>json int kw_np_payer_type: _?_ тип платника доставки НП, в форматі name/ref ( Одержувач/Recipient) (``Відправник``, ``Одержувач``, ``Третя особа``)
     :>json int kw_np_delivery_weight: вага товару НП
     :>json int kw_np_delivery_volume: об’єм вантажа НП
     :>json int kw_np_delivery_so_cost: вартість НП
+    :>json string kw_np_cargo_type: тип вантажу (``Посилка``, ``Вантаж``, ``Документи``, ``Шини-диски``, ``Палети``)
+    :>json string kw_np_description: опис вантажу для НП
+    :>json string kw_np_additional_info:
+    :>json string kw_np_cost:
+    :>json string kw_np_estimated_delivery_date:
+    :>json string kw_np_departure_date: дата відправки (формат - ``%d-%m-%y``)
+    :>json string kw_np_preferred_delivery_date: бажана дата доставки (формат - ``%Y-%m-%d %H:%M:%S``)
+    :>json int kw_np_free_storage_days: кількість днів безкоштовного зберігання
+    :>json float kw_np_delivery_cost: вартість доставки
+    :>json float kw_np_redelivery_cost: вартість зворотньої доставки
+    :>json float kw_np_packing_cost: вартість пакування
 
 Створення замовлення на продаж
 ------------------
