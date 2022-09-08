@@ -5,8 +5,32 @@ Kitworks API Specification
 
     This project is under active development.
 
-Authentication
---------------
+Base functionality module kw_api
+--------------------------------
+
+kw_api is a framework for creating a deeply customized API that can be used to
+integrate Odoo with other systems such as CMS, mobile application,
+frontend sites etc.
+
+kw_api provides
+
+* all request logging functionality
+* authorization based on user token (more applicable for mobile apps)
+* authorization based on api key with IP address restriction (
+more applicable for CMS or other server systems)
+* endpoints wrapper
+* input data parsing and validation
+* automatic response data preparation and pagination
+* multi language response
+
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+   :glob:
+   :caption: kw_api (base functionality)
+
+   kw_api/index
 
 .. toctree::
    :maxdepth: 2
@@ -16,9 +40,6 @@ Authentication
 
    auth/index
    currencies/index
-
-Products
---------
 
 .. toctree::
    :maxdepth: 2
@@ -31,9 +52,6 @@ Products
    products/product_brands
    products/product_quants
 
-Sale Order
---------
-
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -43,9 +61,6 @@ Sale Order
    sale_orders/sale_orders_stages
    sale_orders/sale_orders
 
-CRM Lead
---------
-
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -53,10 +68,6 @@ CRM Lead
    :caption: CRM Lead
 
    crm_lead/crm_lead
-
-
-Users
---------
 
 .. toctree::
    :maxdepth: 2
@@ -66,10 +77,6 @@ Users
 
    users/users
 
-
-Partners
---------
-
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -78,8 +85,6 @@ Partners
 
    partners/partners
 
-Delivery
---------
 
 .. toctree::
    :maxdepth: 2
@@ -89,8 +94,6 @@ Delivery
 
    delivery/delivery
 
-Website
---------
 
 .. toctree::
    :maxdepth: 2
@@ -100,19 +103,6 @@ Website
 
    website/website
 
-Car Services
---------
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :glob:
-   :caption: Car Services
-
-   car_services/car_services
-
-Sizes
---------
 
 .. toctree::
    :maxdepth: 2
@@ -123,14 +113,3 @@ Sizes
    sizes/sizes
    sizes/size_charts
    sizes/size_chart_categories
-
-M5
---------
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :glob:
-   :caption: M5
-
-   m5/products
