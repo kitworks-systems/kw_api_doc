@@ -5,14 +5,14 @@ About framework
 ------------------
 
 
-.. image:: kw_api/1.png
+.. image:: 1.png
   :width: 600
   :alt: Settings
 
-.. image:: kw_api/2.png
+.. image:: 2.png
   :width: 600
   :alt: Log list
 
-.. image:: kw_api/3.png
+.. image:: 3.png
   :width: 600
   :alt: Log json
