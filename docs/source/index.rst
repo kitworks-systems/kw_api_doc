@@ -23,6 +23,7 @@ Module kw_api provides
 * multi language response
 
 
+
 .. toctree::
    :maxdepth: 3
    :hidden:
@@ -30,6 +31,7 @@ Module kw_api provides
    :caption: kw_api (base functionality)
 
    kw_api/index
+   kw_api/endpoint
 
 .. toctree::
    :maxdepth: 2
