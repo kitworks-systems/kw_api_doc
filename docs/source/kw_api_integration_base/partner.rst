@@ -18,16 +18,19 @@ Partner list
 
         .. code-tab:: bash
 
-            $ curl \
-                -X GET \
-                -H "Authorization: Your Api Key" \
-                http://localhost/kw_api/integration/partners
+            $ curl -X GET \
+                -H "Authorization: Your_Api_Key" \
+                -H "Content-Type: application/json" \
+                http://localhost/kw_api/integration/partner
 
         .. code-tab:: python
 
             import requests
             import json
-            headers = {'Authorization': 'Your Api Key'}
+            headers = {
+                'Authorization': 'Your_Api_Key',
+                'Content-Type': 'application/json',
+            }
             URL = 'http://localhost/kw_api/integration/partner'
             response = requests.get(URL, headers=headers)
             print(response.json())
@@ -37,20 +40,25 @@ Partner list
     .. sourcecode:: json
 
         {
-           "result":[
-              {
-                 "id":1,
-                 "name":"string",
-                 "ref":"string",
-                 "lang":"en_US",
-                 "website":"http://www.example.com",
-                 "phone":"(000)-000-0000",
-                 "email":"example@example.com",
-                 "city":"Fremont",
-                 "street":"string",
-                 "street2":"string"
-              }
-           ]
+            "content": [
+                {
+                    "id": 14,
+                    "name": "Azure Interior",
+                    "ref": false,
+                    "lang": "en_US",
+                    "website": "http://www.azure-interior.com",
+                    "phone": "(870)-931-0505",
+                    "email": "azure.Interior24@example.com",
+                    "city": "Fremont",
+                    "street": "4557 De Silva St",
+                    "street2": false
+                }
+            ],
+            "totalElements": 36,
+            "totalPages": 1,
+            "numberOfElements": 36,
+            "number": 0,
+            "last": false
         }
 
 

@@ -22,32 +22,10 @@ Module kw_api provides
 * automatic response data preparation and pagination
 * multi language response
 
+Integration modules provides
 
-Integration endpoints protection
----------------------------------
-
-All integration endpoints require valid :doc:`/kw_api/index:API Tokens` in header Authorization
-
-.. http:get:: /kw_api/integration/partner
-
-    **Example request**:
-
-    .. tabs::
-
-        .. code-tab:: bash
-
-            $ curl -X GET -H "Authorization: Your_Api_Key" \
-                http://localhost/kw_api/integration/partners
-
-        .. code-tab:: python
-
-            import requests
-            import json
-            headers = {'Authorization': 'Your_Api_Key'}
-            URL = 'http://localhost/kw_api/integration/partner'
-            response = requests.get(URL, headers=headers)
-            print(response.json())
-
+* :doc:`/kw_api/index:Integration endpoints protection`
+* :doc:`/kw_api/index:Integration endpoints pagination`
 
 
 .. toctree::
