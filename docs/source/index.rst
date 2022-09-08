@@ -5,19 +5,18 @@ Kitworks API Specification
 
     This project is under active development.
 
-Base functionality module kw_api
---------------------------------
+API creating framework
+----------------------
 
 kw_api is a framework for creating a deeply customized API that can be used to
 integrate Odoo with other systems such as CMS, mobile application,
 frontend sites etc.
 
-kw_api provides
+Module kw_api provides
 
 * all request logging functionality
 * authorization based on user token (more applicable for mobile apps)
-* authorization based on api key with IP address restriction (
-more applicable for CMS or other server systems)
+* authorization based on api key with IP address restriction (more applicable for CMS or other server systems)
 * endpoints wrapper
 * input data parsing and validation
 * automatic response data preparation and pagination
