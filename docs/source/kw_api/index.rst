@@ -6,7 +6,7 @@ Settings
 
 Settings allow you to customize how the API works according to your needs
 
-.. figure:: /_static/images/kw_api/1.jpg
+.. figure:: /_static/images/kw_api/1.png
    :width: 800
    :align: center
    :alt: Settings
@@ -25,16 +25,16 @@ Language settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Logging
-==============
+------------------
 
 kw_api logs all request successful and error
 
-.. figure:: /_static/images/kw_api/2.jpg
+.. figure:: /_static/images/kw_api/2.png
    :width: 800
    :align: center
    :alt: Log list
 
-.. figure:: /_static/images/kw_api/3.jpg
+.. figure:: /_static/images/kw_api/3.png
    :width: 800
    :align: center
    :alt: Log json
@@ -50,9 +50,9 @@ Error logs
 
 
 API Tokens
-==============
+------------------
 
 
 API Keys
-==============
+------------------
 
