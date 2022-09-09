@@ -60,7 +60,7 @@ API Keys
 
 
 Integration endpoints protection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 All integration endpoints require valid :doc:`API token </kw_api/index:api-tokens>` in header Authorization
 
@@ -95,7 +95,7 @@ All integration endpoints require valid :doc:`API token </kw_api/index:api-token
 
 
 Integration endpoints pagination
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 List endpoint endpoints supports pagination with requested pages size
 
@@ -163,7 +163,7 @@ List endpoint endpoints supports pagination with requested pages size
 
 
 Integration endpoints updated only elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------
 
 Most of list endpoints supports filtration by last update date.
 

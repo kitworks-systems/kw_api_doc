@@ -24,32 +24,27 @@ Module kw_api provides
 
 Integration modules provides
 
-* protection :doc:`/kw_api/index:Integration endpoints protection`
-* protection :ref:`Integration endpoints protections </kw_api/index:Integration endpoints protections>`
-* pagination :doc:`/kw_api/index:Integration endpoints pagination`
+* protection :doc:`Integration endpoints protections </kw_api/index:Integration endpoints protections>`
 * pagination :doc:`Integration endpoints protections </kw_api/index:Integration endpoints pagination>`
-
-protection :ref:`Integration endpoints protections </kw_api/index:Integration endpoints protections>`
-
-pagination :doc:`Integration endpoints protections </kw_api/index:Integration endpoints pagination>`
 
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :glob:
-   :caption: kw_api (base functionality)
+   :caption: Framework features (module kw_api)
 
    kw_api/index
    kw_api/endpoint
+   kw_api/auth
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :glob:
-   :caption: kw_api_integration_base
+   :caption: Odoo module base endpoints
 
-   kw_api/partner
+   kw_api_integration_base/partner
 
 .. toctree::
    :maxdepth: 2
