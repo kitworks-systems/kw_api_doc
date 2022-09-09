@@ -24,8 +24,8 @@ Module kw_api provides
 
 Integration modules provides
 
-* :doc:`/kw_api/index:Integration endpoints protection`
-* :doc:`/kw_api/index:Integration endpoints pagination`
+* protection :doc:`/kw_api/index:Integration endpoints protection`
+* pagination :doc:`/kw_api/index:Integration endpoints pagination`
 
 
 .. toctree::
@@ -81,22 +81,6 @@ Integration modules provides
    :caption: CRM Lead
 
    crm_lead/crm_lead
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :glob:
-   :caption: Users
-
-   users/users
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :glob:
-   :caption: Partners
-
-   partners/partners
 
 
 .. toctree::
