@@ -25,7 +25,13 @@ Module kw_api provides
 Integration modules provides
 
 * protection :doc:`/kw_api/index:Integration endpoints protection`
+* protection :ref:`Integration endpoints protections </kw_api/index:Integration endpoints protections>`
 * pagination :doc:`/kw_api/index:Integration endpoints pagination`
+* pagination :doc:`Integration endpoints protections </kw_api/index:Integration endpoints pagination>`
+
+protection :ref:`Integration endpoints protections </kw_api/index:Integration endpoints protections>`
+
+pagination :doc:`Integration endpoints protections </kw_api/index:Integration endpoints pagination>`
 
 
 .. toctree::
