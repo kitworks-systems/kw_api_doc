@@ -62,11 +62,11 @@ Integration endpoints protection
 
 All integration endpoints require valid :doc:`API token </kw_api/index:api-tokens>` in header Authorization
 
-``Authorization``  pass valid API key.
-
-``Content-Type``  pass "application/json"
-
 .. http:get:: /kw_api/integration/partner
+
+    ``Authorization``  pass valid API key.
+
+    ``Content-Type``  pass "application/json"
 
     **Example request**:
 
@@ -97,11 +97,11 @@ Integration endpoints pagination
 
 List endpoint support pagination.
 
-``pageIndex``  pass required page number. By default is equal to first page.
-
-``pageSize``   pass required object quantity per page. By default is equal to 100
-
 .. http:get:: /kw_api/integration/partner?pageIndex=2&pageSize=3
+
+    ``pageIndex``  pass required page number. By default is equal to first page.
+
+    ``pageSize``   pass required object quantity per page. By default is equal to 100
 
     **Example request**:
 
@@ -126,6 +126,7 @@ List endpoint support pagination.
             response = requests.get(URL, headers=headers)
             print(response.json())
 
+    :query int pageSize: pass required object quantity per page. By default is equal to 100
 
     **Example response**:
 
@@ -152,3 +153,9 @@ List endpoint support pagination.
             "number": 2,
             "last": false
         }
+
+    :>json string totalElements: Quantity of elements in response
+    :>json string totalPages: Quantity of pages in response
+    :>json string numberOfElements: Quantity of elements in page (is equals to pageSize)
+    :>json string number: Current page number (is equals to pageIndex)
+    :>json string last: Is page last (number == totalPages)
