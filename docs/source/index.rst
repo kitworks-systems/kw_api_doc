@@ -32,7 +32,7 @@ Integration modules provides
    :maxdepth: 2
    :hidden:
    :glob:
-   :caption: Framework features (module kw_api)
+   :caption: Framework features
 
    kw_api/index
    kw_api/endpoint

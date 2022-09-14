@@ -1,5 +1,7 @@
-Partner
-================
+Partner (Odoo Contacts)
+========================
+
+This endpoints provide access to Odoo Contacts (model res.partner)
 
 Partner list
 -----------------------------------
@@ -7,10 +9,6 @@ Partner list
 .. http:get:: /kw_api/integration/partner
 
     У результаті запиту отримуємо списку всіх контактів.
-
-    .. attention::
-
-        Api Key - ключ для особистого доступу до API (required in header)
 
     **Example request**:
 
@@ -27,10 +25,8 @@ Partner list
 
             import requests
             import json
-            headers = {
-                'Authorization': 'Your_Api_Key',
-                'Content-Type': 'application/json',
-            }
+            headers = {'Authorization': 'Your_Api_Key',
+                       'Content-Type': 'application/json', }
             URL = 'http://localhost/kw_api/integration/partner'
             response = requests.get(URL, headers=headers)
             print(response.json())
@@ -48,7 +44,19 @@ Partner list
                     "lang": "en_US",
                     "website": "http://www.azure-interior.com",
                     "phone": "(870)-931-0505",
+                    "mobile": false,
                     "email": "azure.Interior24@example.com",
+                    "country_id": {
+                        "id": 233,
+                        "name": "United States",
+                        "name_en": "United States",
+                        "name_ru": "Соединённые Штаты Америки",
+                        "name_uk": "США"
+                    },
+                    "state_id": {
+                        "id": 13,
+                        "name": "California"
+                    },
                     "city": "Fremont",
                     "street": "4557 De Silva St",
                     "street2": false
@@ -61,16 +69,27 @@ Partner list
             "last": false
         }
 
+    :>json int id: record database ID
+    :>json string name: contact name
+    :>json string ref: contact reference
+    :>json string lang: contact locale (language ISO code)
+    :>json string website: contact website
+    :>json string phone: contact phone
+    :>json string mobile: contact mobile
+    :>json string email: contact email
+    :>json dict country_id: contact country
+    :>json dict state_id: contact state
+    :>json string city: contact city
+    :>json string street: contact building address
+    :>json string street2: contact building address inside building
 
-Отримання контакту за id номером
+
+Partner get
 ------------------
+
 .. http:get:: /kw_api/integration/partners/(int:partner_id)
 
     У результаті запиту отримуємо користувача за id номером.
-
-    .. attention::
-
-        Api Key - ключ для особистого доступу до API (required in header)
 
     **Example request**:
 
@@ -78,41 +97,52 @@ Partner list
 
         .. code-tab:: bash
 
-            $ curl \
-                -X GET \
-                -H "Authorization: Bearer_ + Your Api Key" \
-                http://localhost/kw_api/integration/partners/(int:partner_id)
+            $ curl -X GET \
+                -H "Authorization: Your_Api_Key" \
+                -H "Content-Type: application/json" \
+                http://localhost/kw_api/integration/partner/1
 
         .. code-tab:: python
 
             import requests
             import json
-            headers = {'Authorization': 'Bearer_ + Your Api Key'}
-            URL = '/kw_api/integration/partners/(int:partner_id)'
+            headers = {'Authorization': 'Your_Api_Key',
+                       'Content-Type': 'application/json', }
+            URL = '/kw_api/integration/partners/1'
             response = requests.get(URL, headers=headers)
             print(response.json())
+
+    :query int partner_id: record database ID
 
     **Example response**:
 
     .. sourcecode:: json
 
-       {
-           "result":{
-              "id":1,
-              "name":"string",
-              "ref":"string",
-              "lang":"en_US",
-              "website":"http://www.example.com",
-              "phone":"(000)-000-0000",
-              "email":"example@example.com",
-              "city":"Fremont",
-              "street":"string",
-              "street2":"string"
-           }
+        {
+            "id": 1,
+            "name": "YourCompany",
+            "ref": false,
+            "lang": "en_US",
+            "website": "http://www.example.com",
+            "phone": "+1 (650) 555-0111 ",
+            "mobile": false,
+            "email": "info@yourcompany.com",
+            "country_id": {
+                "id": 233,
+                "name": "United States",
+                "name_en": "United States",
+                "name_ru": "Соединённые Штаты Америки",
+                "name_uk": "США"
+            },
+            "state_id": {
+                "id": 13,
+                "name": "California"
+            },
+            "city": "San Francisco",
+            "street": "250 Executive Park Blvd, Suite 3400",
+            "street2": false
         }
 
-
-    :query int partner_id: url параметр ідентифікатор контакту
 
 
 Створення контакту
