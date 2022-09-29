@@ -775,6 +775,7 @@
     :>json string default_code: код товару
     :>json string barcode: унікальний код товару
     :>json string image_url: url картинки товару
+    :>json list (array) video_links: url відео товару
     :>json int currency_id: ідентифікатор валюти оплати
 
 
