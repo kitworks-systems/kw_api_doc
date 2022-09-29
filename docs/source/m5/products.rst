@@ -380,6 +380,8 @@
                     "default_code":"string",
                     "barcode":"string",
                     "images_url":"http://url/kw_api/integration/image/product.image/42/image_1920/",
+                    "video_links": [{"name_ru": "video1", "link_ru": "//http...", "name_ua": "v1", "link_ua": "//http..."}
+                        ]
                     "product_variant_ids":[
                        {
                           "id":0,
